@@ -102,14 +102,14 @@
             this.pnl_ManChinh.Controls.Add(this.pictureBox2);
             this.pnl_ManChinh.Location = new System.Drawing.Point(205, 79);
             this.pnl_ManChinh.Name = "pnl_ManChinh";
-            this.pnl_ManChinh.Size = new System.Drawing.Size(1479, 760);
+            this.pnl_ManChinh.Size = new System.Drawing.Size(1479, 796);
             this.pnl_ManChinh.TabIndex = 1;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Location = new System.Drawing.Point(3, 3);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1518, 796);
+            this.pictureBox2.Size = new System.Drawing.Size(1518, 790);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
