@@ -54,6 +54,7 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dtgv_HoadonCho = new System.Windows.Forms.DataGridView();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.btn_ThanhToan = new System.Windows.Forms.Button();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -66,7 +67,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.btn_ThanhToan = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_DSSP)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -236,14 +236,14 @@
             this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox3.Location = new System.Drawing.Point(575, 393);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(425, 305);
+            this.groupBox3.Size = new System.Drawing.Size(413, 305);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thêm nhanh khách hàng";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(93, 242);
+            this.button1.Location = new System.Drawing.Point(85, 249);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(241, 40);
             this.button1.TabIndex = 6;
@@ -304,9 +304,9 @@
             // 
             this.groupBox4.Controls.Add(this.dtgv_HoadonCho);
             this.groupBox4.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox4.Location = new System.Drawing.Point(1006, 393);
+            this.groupBox4.Location = new System.Drawing.Point(994, 393);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(352, 305);
+            this.groupBox4.Size = new System.Drawing.Size(335, 305);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Hóa đơn chờ";
@@ -318,7 +318,7 @@
             this.dtgv_HoadonCho.Name = "dtgv_HoadonCho";
             this.dtgv_HoadonCho.RowHeadersWidth = 51;
             this.dtgv_HoadonCho.RowTemplate.Height = 29;
-            this.dtgv_HoadonCho.Size = new System.Drawing.Size(340, 208);
+            this.dtgv_HoadonCho.Size = new System.Drawing.Size(323, 208);
             this.dtgv_HoadonCho.TabIndex = 0;
             // 
             // groupBox5
@@ -337,12 +337,21 @@
             this.groupBox5.Controls.Add(this.label6);
             this.groupBox5.Controls.Add(this.label5);
             this.groupBox5.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox5.Location = new System.Drawing.Point(1017, 12);
+            this.groupBox5.Location = new System.Drawing.Point(994, 12);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(335, 362);
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Thanh toán";
+            // 
+            // btn_ThanhToan
+            // 
+            this.btn_ThanhToan.Location = new System.Drawing.Point(82, 295);
+            this.btn_ThanhToan.Name = "btn_ThanhToan";
+            this.btn_ThanhToan.Size = new System.Drawing.Size(166, 46);
+            this.btn_ThanhToan.TabIndex = 12;
+            this.btn_ThanhToan.Text = "THANH TOÁN";
+            this.btn_ThanhToan.UseVisualStyleBackColor = true;
             // 
             // textBox7
             // 
@@ -440,15 +449,6 @@
             this.label5.Size = new System.Drawing.Size(104, 19);
             this.label5.TabIndex = 0;
             this.label5.Text = "Mã hóa đơn :";
-            // 
-            // btn_ThanhToan
-            // 
-            this.btn_ThanhToan.Location = new System.Drawing.Point(82, 295);
-            this.btn_ThanhToan.Name = "btn_ThanhToan";
-            this.btn_ThanhToan.Size = new System.Drawing.Size(166, 46);
-            this.btn_ThanhToan.TabIndex = 12;
-            this.btn_ThanhToan.Text = "THANH TOÁN";
-            this.btn_ThanhToan.UseVisualStyleBackColor = true;
             // 
             // FormBanHang
             // 
