@@ -67,6 +67,7 @@
             this.cb_nhoTK.TabIndex = 10;
             this.cb_nhoTK.Text = "Nhớ tài khoản";
             this.cb_nhoTK.UseVisualStyleBackColor = true;
+            this.cb_nhoTK.CheckedChanged += new System.EventHandler(this.cb_nhoTK_CheckedChanged);
             // 
             // label2
             // 
@@ -106,6 +107,7 @@
             this.btn_dangNhap.TabIndex = 5;
             this.btn_dangNhap.Text = "ĐĂNG NHẬP";
             this.btn_dangNhap.UseVisualStyleBackColor = false;
+            this.btn_dangNhap.Click += new System.EventHandler(this.btn_dangNhap_Click);
             // 
             // llForgotpassword
             // 
@@ -118,6 +120,7 @@
             this.llForgotpassword.TabIndex = 7;
             this.llForgotpassword.TabStop = true;
             this.llForgotpassword.Text = "Quên mật khẩu?";
+            this.llForgotpassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llForgotpassword_LinkClicked);
             // 
             // txt_taiKhoan
             // 
@@ -142,6 +145,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "FormDangNhap";
             this.Text = "FormDangNhap";
+            this.Load += new System.EventHandler(this.FormDangNhap_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
