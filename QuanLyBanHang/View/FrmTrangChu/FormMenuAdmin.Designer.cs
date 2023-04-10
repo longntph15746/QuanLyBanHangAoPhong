@@ -49,6 +49,7 @@
             this.btn_X = new System.Windows.Forms.Button();
             this.pnl_ManChinh = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnl_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -102,6 +103,7 @@
             this.btn_DanhMucHD.TabIndex = 11;
             this.btn_DanhMucHD.Text = "DM HÓA ĐƠN";
             this.btn_DanhMucHD.UseVisualStyleBackColor = true;
+            this.btn_DanhMucHD.Click += new System.EventHandler(this.btn_DanhMucHD_Click);
             // 
             // btn_Thoat
             // 
@@ -114,6 +116,7 @@
             this.btn_Thoat.TabIndex = 2;
             this.btn_Thoat.Text = "THOÁT";
             this.btn_Thoat.UseVisualStyleBackColor = true;
+            this.btn_Thoat.Click += new System.EventHandler(this.btn_Thoat_Click);
             // 
             // btn_ThongKe
             // 
@@ -126,6 +129,7 @@
             this.btn_ThongKe.TabIndex = 2;
             this.btn_ThongKe.Text = "THỐNG KÊ";
             this.btn_ThongKe.UseVisualStyleBackColor = true;
+            this.btn_ThongKe.Click += new System.EventHandler(this.btn_ThongKe_Click);
             // 
             // btn_NhanVien
             // 
@@ -138,6 +142,7 @@
             this.btn_NhanVien.TabIndex = 2;
             this.btn_NhanVien.Text = "NHÂN VIÊN";
             this.btn_NhanVien.UseVisualStyleBackColor = true;
+            this.btn_NhanVien.Click += new System.EventHandler(this.btn_NhanVien_Click);
             // 
             // btn_HoaDon
             // 
@@ -150,6 +155,7 @@
             this.btn_HoaDon.TabIndex = 2;
             this.btn_HoaDon.Text = "HÓA ĐƠN";
             this.btn_HoaDon.UseVisualStyleBackColor = true;
+            this.btn_HoaDon.Click += new System.EventHandler(this.btn_HoaDon_Click);
             // 
             // btn_Size
             // 
@@ -162,6 +168,7 @@
             this.btn_Size.TabIndex = 8;
             this.btn_Size.Text = "SIZE";
             this.btn_Size.UseVisualStyleBackColor = true;
+            this.btn_Size.Click += new System.EventHandler(this.btn_Size_Click);
             // 
             // btn_MauSac
             // 
@@ -174,6 +181,7 @@
             this.btn_MauSac.TabIndex = 7;
             this.btn_MauSac.Text = "MÀU SẮC";
             this.btn_MauSac.UseVisualStyleBackColor = true;
+            this.btn_MauSac.Click += new System.EventHandler(this.btn_MauSac_Click);
             // 
             // btn_ChatLieu
             // 
@@ -186,6 +194,7 @@
             this.btn_ChatLieu.TabIndex = 6;
             this.btn_ChatLieu.Text = "CHẤT LIỆU";
             this.btn_ChatLieu.UseVisualStyleBackColor = true;
+            this.btn_ChatLieu.Click += new System.EventHandler(this.btn_ChatLieu_Click);
             // 
             // btn_HangSanXuat
             // 
@@ -198,6 +207,7 @@
             this.btn_HangSanXuat.TabIndex = 6;
             this.btn_HangSanXuat.Text = "HÃNG SẢN XUẤT";
             this.btn_HangSanXuat.UseVisualStyleBackColor = true;
+            this.btn_HangSanXuat.Click += new System.EventHandler(this.btn_HangSanXuat_Click);
             // 
             // btn_NhaCungCap
             // 
@@ -211,6 +221,7 @@
             this.btn_NhaCungCap.TabIndex = 4;
             this.btn_NhaCungCap.Text = "NHÀ CUNG CẤP";
             this.btn_NhaCungCap.UseVisualStyleBackColor = true;
+            this.btn_NhaCungCap.Click += new System.EventHandler(this.btn_NhaCungCap_Click);
             // 
             // btn_SanPham
             // 
@@ -223,6 +234,7 @@
             this.btn_SanPham.TabIndex = 3;
             this.btn_SanPham.Text = "SẢN PHẨM";
             this.btn_SanPham.UseVisualStyleBackColor = true;
+            this.btn_SanPham.Click += new System.EventHandler(this.btn_SanPham_Click);
             // 
             // btn_BanHang
             // 
@@ -235,6 +247,7 @@
             this.btn_BanHang.TabIndex = 2;
             this.btn_BanHang.Text = "BÁN HÀNG";
             this.btn_BanHang.UseVisualStyleBackColor = true;
+            this.btn_BanHang.Click += new System.EventHandler(this.btn_BanHang_Click);
             // 
             // btn_TrangChu
             // 
@@ -254,7 +267,7 @@
             this.panel1.Controls.Add(this.pnl_Home);
             this.panel1.Controls.Add(this.pnl_ManChinh);
             this.panel1.Controls.Add(this.pnl_Menu);
-            this.panel1.Location = new System.Drawing.Point(28, 21);
+            this.panel1.Location = new System.Drawing.Point(13, 12);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(2188, 834);
@@ -263,12 +276,13 @@
             // pnl_Home
             // 
             this.pnl_Home.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.pnl_Home.Controls.Add(this.button1);
             this.pnl_Home.Controls.Add(this.lbl_Home);
             this.pnl_Home.Controls.Add(this.btn_X);
-            this.pnl_Home.Location = new System.Drawing.Point(256, 6);
+            this.pnl_Home.Location = new System.Drawing.Point(260, 4);
             this.pnl_Home.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnl_Home.Name = "pnl_Home";
-            this.pnl_Home.Size = new System.Drawing.Size(1909, 64);
+            this.pnl_Home.Size = new System.Drawing.Size(1623, 65);
             this.pnl_Home.TabIndex = 0;
             // 
             // lbl_Home
@@ -299,10 +313,10 @@
             // pnl_ManChinh
             // 
             this.pnl_ManChinh.Controls.Add(this.pictureBox2);
-            this.pnl_ManChinh.Location = new System.Drawing.Point(256, 75);
+            this.pnl_ManChinh.Location = new System.Drawing.Point(260, 75);
             this.pnl_ManChinh.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnl_ManChinh.Name = "pnl_ManChinh";
-            this.pnl_ManChinh.Size = new System.Drawing.Size(1909, 759);
+            this.pnl_ManChinh.Size = new System.Drawing.Size(1623, 756);
             this.pnl_ManChinh.TabIndex = 1;
             // 
             // pictureBox2
@@ -310,10 +324,23 @@
             this.pictureBox2.Location = new System.Drawing.Point(4, 3);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1898, 756);
+            this.pictureBox2.Size = new System.Drawing.Size(1600, 740);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.button1.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button1.Location = new System.Drawing.Point(1564, 11);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(40, 39);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "X";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormMenuAdmin
             // 
@@ -359,5 +386,6 @@
         private Button btn_X;
         private Panel pnl_ManChinh;
         private PictureBox pictureBox2;
+        private Button button1;
     }
 }

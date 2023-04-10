@@ -96,6 +96,7 @@
             this.btn_X.TabIndex = 0;
             this.btn_X.Text = "X";
             this.btn_X.UseVisualStyleBackColor = false;
+            this.btn_X.Click += new System.EventHandler(this.btn_X_Click);
             // 
             // pnl_ManChinh
             // 
@@ -153,6 +154,7 @@
             this.btn_Thoat.TabIndex = 2;
             this.btn_Thoat.Text = "THOÁT";
             this.btn_Thoat.UseVisualStyleBackColor = true;
+            this.btn_Thoat.Click += new System.EventHandler(this.btn_Thoat_Click);
             // 
             // btn_HoaDon
             // 
@@ -164,6 +166,7 @@
             this.btn_HoaDon.TabIndex = 2;
             this.btn_HoaDon.Text = "HÓA ĐƠN";
             this.btn_HoaDon.UseVisualStyleBackColor = true;
+            this.btn_HoaDon.Click += new System.EventHandler(this.btn_HoaDon_Click);
             // 
             // btn_Size
             // 
@@ -175,6 +178,7 @@
             this.btn_Size.TabIndex = 8;
             this.btn_Size.Text = "SIZE";
             this.btn_Size.UseVisualStyleBackColor = true;
+            this.btn_Size.Click += new System.EventHandler(this.btn_Size_Click);
             // 
             // btn_MauSac
             // 
@@ -186,6 +190,7 @@
             this.btn_MauSac.TabIndex = 7;
             this.btn_MauSac.Text = "MÀU SẮC";
             this.btn_MauSac.UseVisualStyleBackColor = true;
+            this.btn_MauSac.Click += new System.EventHandler(this.btn_MauSac_Click);
             // 
             // btn_ChatLieu
             // 
@@ -197,6 +202,7 @@
             this.btn_ChatLieu.TabIndex = 6;
             this.btn_ChatLieu.Text = "CHẤT LIỆU";
             this.btn_ChatLieu.UseVisualStyleBackColor = true;
+            this.btn_ChatLieu.Click += new System.EventHandler(this.btn_ChatLieu_Click);
             // 
             // btn_HangSanXuat
             // 
@@ -207,6 +213,7 @@
             this.btn_HangSanXuat.TabIndex = 6;
             this.btn_HangSanXuat.Text = "HÃNG SẢN XUẤT";
             this.btn_HangSanXuat.UseVisualStyleBackColor = true;
+            this.btn_HangSanXuat.Click += new System.EventHandler(this.btn_HangSanXuat_Click);
             // 
             // btn_NhaCungCap
             // 
@@ -218,6 +225,7 @@
             this.btn_NhaCungCap.TabIndex = 4;
             this.btn_NhaCungCap.Text = "NHÀ CUNG CẤP";
             this.btn_NhaCungCap.UseVisualStyleBackColor = true;
+            this.btn_NhaCungCap.Click += new System.EventHandler(this.btn_NhaCungCap_Click);
             // 
             // btn_SanPham
             // 
@@ -240,6 +248,7 @@
             this.btn_BanHang.TabIndex = 2;
             this.btn_BanHang.Text = "BÁN HÀNG";
             this.btn_BanHang.UseVisualStyleBackColor = true;
+            this.btn_BanHang.Click += new System.EventHandler(this.btn_BanHang_Click);
             // 
             // btn_TrangChu
             // 
