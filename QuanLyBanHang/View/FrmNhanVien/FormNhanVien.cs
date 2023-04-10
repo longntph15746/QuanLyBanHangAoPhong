@@ -16,5 +16,7 @@ namespace QuanLyBanHang.View.FrmNhanVien
         {
             InitializeComponent();
         }
+
+        
     }
 }

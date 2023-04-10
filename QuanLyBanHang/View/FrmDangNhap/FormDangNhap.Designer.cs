@@ -71,7 +71,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 152);
+            this.label2.Location = new System.Drawing.Point(23, 153);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(129, 23);
             this.label2.TabIndex = 9;
@@ -80,7 +80,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 103);
+            this.label1.Location = new System.Drawing.Point(23, 104);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(139, 23);
             this.label1.TabIndex = 8;
@@ -100,14 +100,11 @@
             // 
             this.btn_dangNhap.BackColor = System.Drawing.Color.Turquoise;
             this.btn_dangNhap.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_dangNhap.Image = global::QuanLyBanHang.Properties.Resources.icons8_login_32;
-            this.btn_dangNhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_dangNhap.Location = new System.Drawing.Point(216, 234);
             this.btn_dangNhap.Name = "btn_dangNhap";
             this.btn_dangNhap.Size = new System.Drawing.Size(173, 49);
             this.btn_dangNhap.TabIndex = 5;
             this.btn_dangNhap.Text = "ĐĂNG NHẬP";
-            this.btn_dangNhap.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_dangNhap.UseVisualStyleBackColor = false;
             // 
             // llForgotpassword

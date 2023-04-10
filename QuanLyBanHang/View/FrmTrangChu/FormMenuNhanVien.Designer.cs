@@ -102,14 +102,14 @@
             this.pnl_ManChinh.Controls.Add(this.pictureBox2);
             this.pnl_ManChinh.Location = new System.Drawing.Point(205, 79);
             this.pnl_ManChinh.Name = "pnl_ManChinh";
-            this.pnl_ManChinh.Size = new System.Drawing.Size(1479, 796);
+            this.pnl_ManChinh.Size = new System.Drawing.Size(1527, 796);
             this.pnl_ManChinh.TabIndex = 1;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Location = new System.Drawing.Point(3, 3);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1518, 790);
+            this.pictureBox2.Size = new System.Drawing.Size(1518, 786);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -201,26 +201,22 @@
             // btn_HangSanXuat
             // 
             this.btn_HangSanXuat.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_HangSanXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_HangSanXuat.Location = new System.Drawing.Point(6, 343);
             this.btn_HangSanXuat.Name = "btn_HangSanXuat";
             this.btn_HangSanXuat.Size = new System.Drawing.Size(185, 42);
             this.btn_HangSanXuat.TabIndex = 6;
             this.btn_HangSanXuat.Text = "HÃNG SẢN XUẤT";
-            this.btn_HangSanXuat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_HangSanXuat.UseVisualStyleBackColor = true;
             // 
             // btn_NhaCungCap
             // 
             this.btn_NhaCungCap.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_NhaCungCap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_NhaCungCap.Location = new System.Drawing.Point(6, 295);
             this.btn_NhaCungCap.Name = "btn_NhaCungCap";
             this.btn_NhaCungCap.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
             this.btn_NhaCungCap.Size = new System.Drawing.Size(185, 42);
             this.btn_NhaCungCap.TabIndex = 4;
             this.btn_NhaCungCap.Text = "NHÀ CUNG CẤP";
-            this.btn_NhaCungCap.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_NhaCungCap.UseVisualStyleBackColor = true;
             // 
             // btn_SanPham
