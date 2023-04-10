@@ -226,7 +226,7 @@
             // cbb_Thang
             // 
             this.cbb_Thang.FormattingEnabled = true;
-            this.cbb_Thang.Location = new System.Drawing.Point(20, 90);
+            this.cbb_Thang.Location = new System.Drawing.Point(31, 75);
             this.cbb_Thang.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbb_Thang.Name = "cbb_Thang";
             this.cbb_Thang.Size = new System.Drawing.Size(129, 27);
@@ -235,7 +235,7 @@
             // cbb_Nam
             // 
             this.cbb_Nam.FormattingEnabled = true;
-            this.cbb_Nam.Location = new System.Drawing.Point(214, 90);
+            this.cbb_Nam.Location = new System.Drawing.Point(214, 75);
             this.cbb_Nam.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbb_Nam.Name = "cbb_Nam";
             this.cbb_Nam.Size = new System.Drawing.Size(129, 27);
