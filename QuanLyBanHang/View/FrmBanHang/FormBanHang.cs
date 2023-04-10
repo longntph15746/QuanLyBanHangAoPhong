@@ -15,6 +15,6 @@ namespace QuanLyBanHang.View.FrmBanHang
         public FormBanHang()
         {
             InitializeComponent();
-        }
+        }  
     }
 }

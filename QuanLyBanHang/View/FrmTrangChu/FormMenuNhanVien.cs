@@ -103,15 +103,23 @@ namespace QuanLyBanHang.View.FrmTrangChu
 
         private void Reset()
         {
-            throw new NotImplementedException();
-        }
-
-        private void btn_Thoat_Click(object sender, EventArgs e)
-        {
             DisableButton();
             lbl_Home.Text = "Chào mừng bạn đến với FPOLY TSHIRT";
             currentButton = null;
             btn_X.Visible = false;
+        }
+
+        private void btn_Thoat_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("bạn có muốn thoát khỏi chương trình không?", "Cảnh báo!", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Bạn đã hủy đăng xuất");
+            }
         }
 
         private void btn_BanHang_Click(object sender, EventArgs e)
