@@ -64,6 +64,7 @@
             this.btn_Thoat.TabIndex = 28;
             this.btn_Thoat.Text = "Thoát";
             this.btn_Thoat.UseVisualStyleBackColor = true;
+            this.btn_Thoat.Click += new System.EventHandler(this.btn_Thoat_Click);
             // 
             // txt_xacNhanMatKhau
             // 
@@ -95,6 +96,7 @@
             this.btn_doiMatKhau.TabIndex = 22;
             this.btn_doiMatKhau.Text = "Đổi mật khẩu ";
             this.btn_doiMatKhau.UseVisualStyleBackColor = true;
+            this.btn_doiMatKhau.Click += new System.EventHandler(this.btn_doiMatKhau_Click);
             // 
             // cb_hienMatKhau
             // 
@@ -107,6 +109,7 @@
             this.cb_hienMatKhau.TabIndex = 21;
             this.cb_hienMatKhau.Text = "Hiện mật khẩu ";
             this.cb_hienMatKhau.UseVisualStyleBackColor = true;
+            this.cb_hienMatKhau.CheckedChanged += new System.EventHandler(this.cb_hienMatKhau_CheckedChanged);
             // 
             // label4
             // 

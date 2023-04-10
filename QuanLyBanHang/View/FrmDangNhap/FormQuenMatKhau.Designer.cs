@@ -65,6 +65,7 @@
             this.btn_submit.TabIndex = 7;
             this.btn_submit.Text = "XÁC NHẬN";
             this.btn_submit.UseVisualStyleBackColor = true;
+            this.btn_submit.Click += new System.EventHandler(this.btn_submit_Click);
             // 
             // txt_otp
             // 
@@ -108,6 +109,7 @@
             this.btn_Send.TabIndex = 2;
             this.btn_Send.Text = "GỬI MÃ";
             this.btn_Send.UseVisualStyleBackColor = true;
+            this.btn_Send.Click += new System.EventHandler(this.btn_Send_Click);
             // 
             // label2
             // 
