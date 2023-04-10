@@ -63,6 +63,19 @@
             this.btn_Them = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dtgv_SPCT = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txt_timKiem = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptb_Anh)).BeginInit();
@@ -367,6 +380,7 @@
             this.btn_chonAnh.TabIndex = 1;
             this.btn_chonAnh.Text = "Chọn ảnh từ thiết bị ...";
             this.btn_chonAnh.UseVisualStyleBackColor = true;
+            this.btn_chonAnh.Click += new System.EventHandler(this.btn_chonAnh_Click);
             // 
             // ptb_Anh
             // 
@@ -410,6 +424,7 @@
             this.btn_CapNhap.TabIndex = 1;
             this.btn_CapNhap.Text = "CẬP NHẬP";
             this.btn_CapNhap.UseVisualStyleBackColor = true;
+            this.btn_CapNhap.Click += new System.EventHandler(this.btn_CapNhap_Click);
             // 
             // btn_Them
             // 
@@ -420,9 +435,11 @@
             this.btn_Them.TabIndex = 0;
             this.btn_Them.Text = "THÊM";
             this.btn_Them.UseVisualStyleBackColor = true;
+            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.txt_timKiem);
             this.groupBox4.Controls.Add(this.dtgv_SPCT);
             this.groupBox4.Location = new System.Drawing.Point(15, 358);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -436,13 +453,119 @@
             // dtgv_SPCT
             // 
             this.dtgv_SPCT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgv_SPCT.Location = new System.Drawing.Point(8, 25);
+            this.dtgv_SPCT.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.Column8,
+            this.Column9,
+            this.Column10,
+            this.Column11,
+            this.Column12});
+            this.dtgv_SPCT.Location = new System.Drawing.Point(8, 61);
             this.dtgv_SPCT.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dtgv_SPCT.Name = "dtgv_SPCT";
             this.dtgv_SPCT.RowHeadersWidth = 51;
             this.dtgv_SPCT.RowTemplate.Height = 29;
-            this.dtgv_SPCT.Size = new System.Drawing.Size(1500, 333);
+            this.dtgv_SPCT.Size = new System.Drawing.Size(1499, 297);
             this.dtgv_SPCT.TabIndex = 0;
+            this.dtgv_SPCT.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_SPCT_CellClick);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "ID";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 50;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Mã SP";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 125;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Tên SP";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 125;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Giá nhập";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 125;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Giá bán";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 125;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Số lượng";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 125;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Nhà CC";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 125;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Hãng SX";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 125;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Chất liệu";
+            this.Column9.MinimumWidth = 6;
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 125;
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "Màu sắc";
+            this.Column10.MinimumWidth = 6;
+            this.Column10.Name = "Column10";
+            this.Column10.Width = 125;
+            // 
+            // Column11
+            // 
+            this.Column11.HeaderText = "Size";
+            this.Column11.MinimumWidth = 6;
+            this.Column11.Name = "Column11";
+            this.Column11.Width = 125;
+            // 
+            // Column12
+            // 
+            this.Column12.HeaderText = "Trạng thái";
+            this.Column12.MinimumWidth = 6;
+            this.Column12.Name = "Column12";
+            this.Column12.Width = 125;
+            // 
+            // txt_timKiem
+            // 
+            this.txt_timKiem.Location = new System.Drawing.Point(1238, 26);
+            this.txt_timKiem.Name = "txt_timKiem";
+            this.txt_timKiem.Size = new System.Drawing.Size(269, 27);
+            this.txt_timKiem.TabIndex = 1;
+            this.txt_timKiem.TextChanged += new System.EventHandler(this.txt_timKiem_TextChanged);
             // 
             // FormSanPham
             // 
@@ -463,6 +586,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ptb_Anh)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_SPCT)).EndInit();
             this.ResumeLayout(false);
 
@@ -505,5 +629,18 @@
         private Button btn_Them;
         private GroupBox groupBox4;
         private DataGridView dtgv_SPCT;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column5;
+        private DataGridViewTextBoxColumn Column6;
+        private DataGridViewTextBoxColumn Column7;
+        private DataGridViewTextBoxColumn Column8;
+        private DataGridViewTextBoxColumn Column9;
+        private DataGridViewTextBoxColumn Column10;
+        private DataGridViewTextBoxColumn Column11;
+        private DataGridViewTextBoxColumn Column12;
+        private TextBox txt_timKiem;
     }
 }
