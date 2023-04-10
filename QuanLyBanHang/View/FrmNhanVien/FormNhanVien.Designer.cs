@@ -45,9 +45,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dtgv_NhanVien = new System.Windows.Forms.DataGridView();
-            this.btn_Them = new System.Windows.Forms.Button();
             this.btn_CapNhap = new System.Windows.Forms.Button();
+            this.btn_Them = new System.Windows.Forms.Button();
+            this.dtgv_NhanVien = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_NhanVien)).BeginInit();
@@ -94,7 +94,7 @@
             // rdb_HD
             // 
             this.rdb_HD.AutoSize = true;
-            this.rdb_HD.Location = new System.Drawing.Point(151, 333);
+            this.rdb_HD.Location = new System.Drawing.Point(148, 333);
             this.rdb_HD.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.rdb_HD.Name = "rdb_HD";
             this.rdb_HD.Size = new System.Drawing.Size(106, 23);
@@ -236,16 +236,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách nhân viên";
             // 
-            // dtgv_NhanVien
+            // btn_CapNhap
             // 
-            this.dtgv_NhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgv_NhanVien.Location = new System.Drawing.Point(8, 27);
-            this.dtgv_NhanVien.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.dtgv_NhanVien.Name = "dtgv_NhanVien";
-            this.dtgv_NhanVien.RowHeadersWidth = 51;
-            this.dtgv_NhanVien.RowTemplate.Height = 29;
-            this.dtgv_NhanVien.Size = new System.Drawing.Size(1161, 347);
-            this.dtgv_NhanVien.TabIndex = 0;
+            this.btn_CapNhap.Location = new System.Drawing.Point(695, 389);
+            this.btn_CapNhap.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btn_CapNhap.Name = "btn_CapNhap";
+            this.btn_CapNhap.Size = new System.Drawing.Size(212, 45);
+            this.btn_CapNhap.TabIndex = 2;
+            this.btn_CapNhap.Text = "CẬP NHẬP";
+            this.btn_CapNhap.UseVisualStyleBackColor = true;
+            this.btn_CapNhap.Click += new System.EventHandler(this.btn_CapNhap_Click);
             // 
             // btn_Them
             // 
@@ -256,16 +256,19 @@
             this.btn_Them.TabIndex = 1;
             this.btn_Them.Text = "THÊM";
             this.btn_Them.UseVisualStyleBackColor = true;
+            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
-            // btn_CapNhap
+            // dtgv_NhanVien
             // 
-            this.btn_CapNhap.Location = new System.Drawing.Point(695, 389);
-            this.btn_CapNhap.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btn_CapNhap.Name = "btn_CapNhap";
-            this.btn_CapNhap.Size = new System.Drawing.Size(212, 45);
-            this.btn_CapNhap.TabIndex = 2;
-            this.btn_CapNhap.Text = "CẬP NHẬP";
-            this.btn_CapNhap.UseVisualStyleBackColor = true;
+            this.dtgv_NhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgv_NhanVien.Location = new System.Drawing.Point(8, 27);
+            this.dtgv_NhanVien.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.dtgv_NhanVien.Name = "dtgv_NhanVien";
+            this.dtgv_NhanVien.RowHeadersWidth = 51;
+            this.dtgv_NhanVien.RowTemplate.Height = 29;
+            this.dtgv_NhanVien.Size = new System.Drawing.Size(1161, 347);
+            this.dtgv_NhanVien.TabIndex = 0;
+            this.dtgv_NhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_NhanVien_CellClick);
             // 
             // FormNhanVien
             // 
