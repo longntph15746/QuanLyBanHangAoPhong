@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FPoly_TShirt_Manage
+namespace QuanLyBanHang
 {
     public class ThemeColor
     {

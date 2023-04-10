@@ -1,10 +1,10 @@
 ﻿
-using _1_DAL_QUANLY.Context;
 using _1_DAL_QUANLY.IRepositories;
 using _1_DAL_QUANLY.Models;
 using _1_DAL_QUANLY.Repositories;
 using _2_BUS_QUANLY.IServices;
 using _2_BUS_QUANLY.ViewModel;
+using DAL_QuanLy.Context;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
