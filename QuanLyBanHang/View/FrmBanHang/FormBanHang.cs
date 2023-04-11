@@ -1,4 +1,4 @@
-﻿using _1_DAL_QUANLY.Models;
+using _1_DAL_QUANLY.Models;
 using _2_BUS_QUANLY.IServices;
 using _2_BUS_QUANLY.ViewModel;
 using System;
@@ -30,6 +30,12 @@ namespace QuanLyBanHang.View.FrmBanHang
         public FormBanHang()
         {
             InitializeComponent();
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
         }  
     }
 }
