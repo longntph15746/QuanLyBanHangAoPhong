@@ -65,32 +65,32 @@ namespace QuanLyBanHang.View.FrmDangNhap
 
         private void FormDangNhap_Load(object sender, EventArgs e)
         {
-            //txt_taiKhoan.Text = Properties.Default.tk;
-            //txt_matKhau.Text = Properties.Settings.Default.mk;
-            //if (Properties.Settings.Default.tk != "")
-            //{
-            //    cb_nhoTK.Checked = true;
-            //}
+            txt_taiKhoan.Text = Properties.Settings.Default.email;
+            txt_matKhau.Text = Properties.Settings.Default.matKhau;
+            if (Properties.Settings.Default.email != "")
+            {
+                cb_nhoTK.Checked = true;
+            }
         }
 
         private void cb_nhoTK_CheckedChanged(object sender, EventArgs e)
         {
-            //if (txt_taiKhoan.Text != "" || txt_matKhau.Text != "")
-            //{
-            //    if (cb_nhoTK.Checked == true)
-            //    {
-            //        string user = txt_taiKhoan.Text;
-            //        string pass = txt_matKhau.Text;
-            //        Properties.Settings.Default.tk = user;
-            //        Properties.Settings.Default.mk = pass;
-            //        Properties.Settings.Default.Save();
-            //    }
-            //    else
-            //    {
-            //        Properties.Settings.Default.Reset();
-            //    }
+            if (txt_taiKhoan.Text != "" || txt_matKhau.Text != "")
+            {
+                if (cb_nhoTK.Checked == true)
+                {
+                    string user = txt_taiKhoan.Text;
+                    string pass = txt_matKhau.Text;
+                    Properties.Settings.Default.email = user;
+                    Properties.Settings.Default.matKhau = pass;
+                    Properties.Settings.Default.Save();
+                }
+                else
+                {
+                    Properties.Settings.Default.Reset();
+                }
+            }
         }
-    }
-    
 
+    }
 }

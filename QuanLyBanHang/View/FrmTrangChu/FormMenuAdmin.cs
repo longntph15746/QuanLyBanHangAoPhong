@@ -104,13 +104,13 @@ namespace QuanLyBanHang.View.FrmTrangChu
         private void btn_BanHang_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FormBanHang(), sender);
-            lbl_Home.Text = btn_TrangChu.Text;
+            lbl_Home.Text = btn_BanHang.Text;
         }
 
         private void btn_SanPham_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FormSanPham(), sender);
-            lbl_Home.Text = btn_TrangChu.Text;
+            lbl_Home.Text = btn_SanPham.Text;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -144,55 +144,55 @@ namespace QuanLyBanHang.View.FrmTrangChu
         private void btn_NhaCungCap_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FormNhaCungCap(), sender);
-            lbl_Home.Text = btn_TrangChu.Text;
+            lbl_Home.Text = btn_NhaCungCap.Text;
         }
 
         private void btn_HangSanXuat_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FormHangSX(), sender);
-            lbl_Home.Text = btn_TrangChu.Text;
+            lbl_Home.Text = btn_HangSanXuat.Text;
         }
 
         private void btn_ChatLieu_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FormChatLieu(), sender);
-            lbl_Home.Text = btn_TrangChu.Text;
+            lbl_Home.Text = btn_ChatLieu.Text;
         }
 
         private void btn_MauSac_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FormMauSac(), sender);
-            lbl_Home.Text = btn_TrangChu.Text;
+            lbl_Home.Text = btn_MauSac.Text;
         }
 
         private void btn_Size_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FormSize(), sender);
-            lbl_Home.Text = btn_TrangChu.Text;
+            lbl_Home.Text = btn_Size.Text;
         }
 
         private void btn_HoaDon_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FormHoaDon(), sender);
-            lbl_Home.Text = btn_TrangChu.Text;
+            lbl_Home.Text = btn_HoaDon.Text;
         }
 
         private void btn_DanhMucHD_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FormDanhMucHD(), sender);
-            lbl_Home.Text = btn_TrangChu.Text;
+            lbl_Home.Text = btn_DanhMucHD.Text;
         }
 
         private void btn_NhanVien_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FormNhanVien(), sender);
-            lbl_Home.Text = btn_TrangChu.Text;
+            lbl_Home.Text = btn_NhanVien.Text;
         }
 
         private void btn_ThongKe_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FormThongKe(), sender);
-            lbl_Home.Text = btn_TrangChu.Text;
+            lbl_Home.Text = btn_ThongKe.Text;
         }
     }
 }
