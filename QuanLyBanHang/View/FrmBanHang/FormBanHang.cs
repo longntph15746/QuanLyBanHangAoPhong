@@ -16,5 +16,10 @@ namespace QuanLyBanHang.View.FrmBanHang
         {
             InitializeComponent();
         }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
