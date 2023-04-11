@@ -103,15 +103,23 @@ namespace QuanLyBanHang.View.FrmTrangChu
 
         private void Reset()
         {
-            throw new NotImplementedException();
-        }
-
-        private void btn_Thoat_Click(object sender, EventArgs e)
-        {
             DisableButton();
             lbl_Home.Text = "Chào mừng bạn đến với FPOLY TSHIRT";
             currentButton = null;
             btn_X.Visible = false;
+        }
+
+        private void btn_Thoat_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("bạn có muốn thoát khỏi chương trình không?", "Cảnh báo!", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Bạn đã hủy đăng xuất");
+            }
         }
 
         private void btn_BanHang_Click(object sender, EventArgs e)
@@ -123,37 +131,37 @@ namespace QuanLyBanHang.View.FrmTrangChu
         private void btn_NhaCungCap_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FormNhaCungCap(), sender);
-            lbl_Home.Text = btn_BanHang.Text;
+            lbl_Home.Text = btn_NhaCungCap.Text;
         }
 
         private void btn_HangSanXuat_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FormHangSX(), sender);
-            lbl_Home.Text = btn_BanHang.Text;
+            lbl_Home.Text = btn_HangSanXuat.Text;
         }
 
         private void btn_ChatLieu_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FormChatLieu(), sender);
-            lbl_Home.Text = btn_BanHang.Text;
+            lbl_Home.Text = btn_ChatLieu.Text;
         }
 
         private void btn_MauSac_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FormMauSac(), sender);
-            lbl_Home.Text = btn_BanHang.Text;
+            lbl_Home.Text = btn_MauSac.Text;
         }
 
         private void btn_Size_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FormSize(), sender);
-            lbl_Home.Text = btn_BanHang.Text;
+            lbl_Home.Text = btn_Size.Text;
         }
 
         private void btn_HoaDon_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FormHoaDon(), sender);
-            lbl_Home.Text = btn_BanHang.Text;
+            lbl_Home.Text = btn_HoaDon.Text;
         }
     }
 
