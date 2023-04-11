@@ -36,6 +36,6 @@ namespace QuanLyBanHang.View.FrmBanHang
         {
 
         }
-        }  
+
     }
 }
