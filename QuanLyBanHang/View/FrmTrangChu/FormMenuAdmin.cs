@@ -194,5 +194,10 @@ namespace QuanLyBanHang.View.FrmTrangChu
             OpenChildForm(new FormThongKe(), sender);
             lbl_Home.Text = btn_ThongKe.Text;
         }
+
+        private void btn_khachHang_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
