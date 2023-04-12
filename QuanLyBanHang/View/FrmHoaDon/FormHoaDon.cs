@@ -25,6 +25,7 @@ namespace QuanLyBanHang.View.FrmHoaDon
         int _idHD;
         public FormHoaDon()
         {
+            InitializeComponent();
             _HDservices = new QLhoaDonServices();
             _NHanVienServices = new QLnhanVienServices();
             _KHSer = new QLkhachHangServices();

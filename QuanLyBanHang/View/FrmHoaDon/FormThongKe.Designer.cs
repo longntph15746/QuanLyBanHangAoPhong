@@ -48,6 +48,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btn_xuatEx = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -157,20 +158,21 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(28, 44);
+            this.dateTimePicker1.Location = new System.Drawing.Point(62, 44);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(312, 27);
+            this.dateTimePicker1.Size = new System.Drawing.Size(244, 27);
             this.dateTimePicker1.TabIndex = 0;
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.btn_xuatEx);
             this.groupBox4.Controls.Add(this.dataGridView1);
             this.groupBox4.Location = new System.Drawing.Point(13, 359);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.groupBox4.Size = new System.Drawing.Size(1445, 305);
+            this.groupBox4.Size = new System.Drawing.Size(1445, 386);
             this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Hàng hóa";
@@ -178,7 +180,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 25);
+            this.dataGridView1.Location = new System.Drawing.Point(15, 69);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -255,7 +257,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(8, 32);
+            this.label7.Location = new System.Drawing.Point(8, 44);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(201, 19);
@@ -264,17 +266,26 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(8, 63);
+            this.textBox1.Location = new System.Drawing.Point(8, 75);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(354, 27);
             this.textBox1.TabIndex = 0;
             // 
+            // btn_xuatEx
+            // 
+            this.btn_xuatEx.Location = new System.Drawing.Point(1262, 19);
+            this.btn_xuatEx.Name = "btn_xuatEx";
+            this.btn_xuatEx.Size = new System.Drawing.Size(183, 44);
+            this.btn_xuatEx.TabIndex = 1;
+            this.btn_xuatEx.Text = "Xuất Excel";
+            this.btn_xuatEx.UseVisualStyleBackColor = true;
+            // 
             // FormThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1507, 690);
+            this.ClientSize = new System.Drawing.Size(1507, 757);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.panel2);
@@ -328,5 +339,6 @@
         private Label label7;
         private TextBox textBox1;
         private DataGridView dataGridView1;
+        private Button btn_xuatEx;
     }
 }
