@@ -145,6 +145,7 @@
             // 
             // txt_ghiChu
             // 
+            this.txt_ghiChu.Enabled = false;
             this.txt_ghiChu.Location = new System.Drawing.Point(575, 152);
             this.txt_ghiChu.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txt_ghiChu.Name = "txt_ghiChu";
@@ -153,6 +154,7 @@
             // 
             // txt_TongTien
             // 
+            this.txt_TongTien.Enabled = false;
             this.txt_TongTien.Location = new System.Drawing.Point(575, 47);
             this.txt_TongTien.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txt_TongTien.Name = "txt_TongTien";
@@ -161,6 +163,7 @@
             // 
             // txt_SDTKH
             // 
+            this.txt_SDTKH.Enabled = false;
             this.txt_SDTKH.Location = new System.Drawing.Point(156, 149);
             this.txt_SDTKH.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txt_SDTKH.Name = "txt_SDTKH";
@@ -169,6 +172,7 @@
             // 
             // txt_MaNV
             // 
+            this.txt_MaNV.Enabled = false;
             this.txt_MaNV.Location = new System.Drawing.Point(156, 97);
             this.txt_MaNV.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txt_MaNV.Name = "txt_MaNV";
@@ -177,6 +181,7 @@
             // 
             // txt_MaHD
             // 
+            this.txt_MaHD.Enabled = false;
             this.txt_MaHD.Location = new System.Drawing.Point(156, 47);
             this.txt_MaHD.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txt_MaHD.Name = "txt_MaHD";

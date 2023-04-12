@@ -70,6 +70,7 @@ namespace QuanLyBanHang.View.FrmBanHang
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.btn_thanhtoanngay = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_DSSP)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -184,6 +185,7 @@ namespace QuanLyBanHang.View.FrmBanHang
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btn_thanhtoanngay);
             this.groupBox2.Controls.Add(this.btn_TaoHD);
             this.groupBox2.Controls.Add(this.btn_XoaGH);
             this.groupBox2.Controls.Add(this.btn_XoaSP);
@@ -198,9 +200,9 @@ namespace QuanLyBanHang.View.FrmBanHang
             // 
             // btn_TaoHD
             // 
-            this.btn_TaoHD.Location = new System.Drawing.Point(388, 255);
+            this.btn_TaoHD.Location = new System.Drawing.Point(260, 255);
             this.btn_TaoHD.Name = "btn_TaoHD";
-            this.btn_TaoHD.Size = new System.Drawing.Size(157, 34);
+            this.btn_TaoHD.Size = new System.Drawing.Size(122, 34);
             this.btn_TaoHD.TabIndex = 3;
             this.btn_TaoHD.Text = "Tạo hóa đơn";
             this.btn_TaoHD.UseVisualStyleBackColor = true;
@@ -208,9 +210,9 @@ namespace QuanLyBanHang.View.FrmBanHang
             // 
             // btn_XoaGH
             // 
-            this.btn_XoaGH.Location = new System.Drawing.Point(198, 255);
+            this.btn_XoaGH.Location = new System.Drawing.Point(138, 255);
             this.btn_XoaGH.Name = "btn_XoaGH";
-            this.btn_XoaGH.Size = new System.Drawing.Size(157, 34);
+            this.btn_XoaGH.Size = new System.Drawing.Size(116, 34);
             this.btn_XoaGH.TabIndex = 2;
             this.btn_XoaGH.Text = "Xóa giỏ hàng";
             this.btn_XoaGH.UseVisualStyleBackColor = true;
@@ -220,7 +222,7 @@ namespace QuanLyBanHang.View.FrmBanHang
             // 
             this.btn_XoaSP.Location = new System.Drawing.Point(6, 255);
             this.btn_XoaSP.Name = "btn_XoaSP";
-            this.btn_XoaSP.Size = new System.Drawing.Size(157, 34);
+            this.btn_XoaSP.Size = new System.Drawing.Size(122, 34);
             this.btn_XoaSP.TabIndex = 1;
             this.btn_XoaSP.Text = "Xóa sản phẩm";
             this.btn_XoaSP.UseVisualStyleBackColor = true;
@@ -510,6 +512,16 @@ namespace QuanLyBanHang.View.FrmBanHang
             this.label5.TabIndex = 0;
             this.label5.Text = "Mã hóa đơn :";
             // 
+            // btn_thanhtoanngay
+            // 
+            this.btn_thanhtoanngay.Location = new System.Drawing.Point(388, 255);
+            this.btn_thanhtoanngay.Name = "btn_thanhtoanngay";
+            this.btn_thanhtoanngay.Size = new System.Drawing.Size(144, 34);
+            this.btn_thanhtoanngay.TabIndex = 4;
+            this.btn_thanhtoanngay.Text = "Thanh toán ngay";
+            this.btn_thanhtoanngay.UseVisualStyleBackColor = true;
+            this.btn_thanhtoanngay.Click += new System.EventHandler(this.btn_thanhtoanngay_Click);
+            // 
             // FormBanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -583,5 +595,6 @@ namespace QuanLyBanHang.View.FrmBanHang
         private Label lbl_diemTichLuy;
         private Button btnThanhToan;
         private ComboBox cbb_KhachHang;
+        private Button btn_thanhtoanngay;
     }
 }
