@@ -17,6 +17,7 @@ using QuanLyBanHang.View.FrmMauSac;
 using QuanLyBanHang.View.FrmSize;
 using QuanLyBanHang.View.FrmHoaDon;
 using QuanLyBanHang.View.FrmNhanVien;
+using QuanLyBanHang.View.FrmKhachHang;
 
 namespace QuanLyBanHang.View.FrmTrangChu
 {
@@ -193,6 +194,12 @@ namespace QuanLyBanHang.View.FrmTrangChu
         {
             OpenChildForm(new FormThongKe(), sender);
             lbl_Home.Text = btn_ThongKe.Text;
+        }
+
+        private void btn_khachHang_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormKhachHang(), sender);
+            lbl_Home.Text = btn_khachHang.Text;
         }
     }
 }

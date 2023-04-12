@@ -50,6 +50,7 @@
             this.btn_X = new System.Windows.Forms.Button();
             this.pnl_ManChinh = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btn_khachHang = new System.Windows.Forms.Button();
             this.pnl_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -61,6 +62,7 @@
             // pnl_Menu
             // 
             this.pnl_Menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.pnl_Menu.Controls.Add(this.btn_khachHang);
             this.pnl_Menu.Controls.Add(this.pictureBox1);
             this.pnl_Menu.Controls.Add(this.btn_DanhMucHD);
             this.pnl_Menu.Controls.Add(this.btn_Thoat);
@@ -122,7 +124,7 @@
             // 
             this.btn_ThongKe.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_ThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_ThongKe.Location = new System.Drawing.Point(8, 645);
+            this.btn_ThongKe.Location = new System.Drawing.Point(8, 692);
             this.btn_ThongKe.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btn_ThongKe.Name = "btn_ThongKe";
             this.btn_ThongKe.Size = new System.Drawing.Size(199, 40);
@@ -135,7 +137,7 @@
             // 
             this.btn_NhanVien.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_NhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_NhanVien.Location = new System.Drawing.Point(8, 599);
+            this.btn_NhanVien.Location = new System.Drawing.Point(8, 646);
             this.btn_NhanVien.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btn_NhanVien.Name = "btn_NhanVien";
             this.btn_NhanVien.Size = new System.Drawing.Size(199, 40);
@@ -342,6 +344,19 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
+            // btn_khachHang
+            // 
+            this.btn_khachHang.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_khachHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_khachHang.Location = new System.Drawing.Point(8, 600);
+            this.btn_khachHang.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btn_khachHang.Name = "btn_khachHang";
+            this.btn_khachHang.Size = new System.Drawing.Size(199, 40);
+            this.btn_khachHang.TabIndex = 13;
+            this.btn_khachHang.Text = "KHÁCH HÀNG";
+            this.btn_khachHang.UseVisualStyleBackColor = true;
+            this.btn_khachHang.Click += new System.EventHandler(this.btn_khachHang_Click);
+            // 
             // FormMenuAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
@@ -387,5 +402,6 @@
         private Panel pnl_ManChinh;
         private PictureBox pictureBox2;
         private Button button1;
+        private Button btn_khachHang;
     }
 }

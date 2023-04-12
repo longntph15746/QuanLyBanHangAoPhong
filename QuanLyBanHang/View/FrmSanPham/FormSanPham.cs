@@ -184,7 +184,7 @@ namespace QuanLyBanHang.View.FrmSanPham
                     giaNhap = Convert.ToInt32(txt_giaNhap.Text),
                     giaBan = Convert.ToInt32(txt_giaBan.Text),
                     soLuong = Convert.ToInt32(txt_soLuong.Text),
-                    trangThai = rdb_conHang.Checked,
+                    trangThai = Convert.ToInt32(txt_soLuong.Text) > 0? true : false,
                     IDSanPham = _qlsanPhamServices.GetsanPhamFromDB().FirstOrDefault(x => x.tenSanPham == cbb_tenSP.Text).IDsanPham,
                     IDNhaCungCap = _qlnhaCungCapServices.GetNhaCungCapFromDB().FirstOrDefault(x => x.tenNhaCungCap == cbb_nhaCC.Text).IDNhaCungCap,
                     IDHangSX = _qlhangSXServices.GetHangSXFromDB().FirstOrDefault(x => x.tenHangSX == cbb_hangSX.Text).IDHangSX,
@@ -216,7 +216,7 @@ namespace QuanLyBanHang.View.FrmSanPham
                 _sanphamCT.giaNhap = Convert.ToInt32(txt_giaNhap.Text);
                 _sanphamCT.giaBan = Convert.ToInt32(txt_giaBan.Text);
                 _sanphamCT.soLuong = Convert.ToInt32(txt_soLuong.Text);
-                _sanphamCT.trangThai = rdb_conHang.Checked;
+                _sanphamCT.trangThai = Convert.ToInt32(txt_soLuong.Text) > 0 ? true : false;
                 _sanphamCT.IDSanPham = _qlsanPhamServices.GetsanPhamFromDB().FirstOrDefault(x => x.tenSanPham == cbb_tenSP.Text).IDsanPham;
                 _sanphamCT.IDNhaCungCap = _qlnhaCungCapServices.GetNhaCungCapFromDB().FirstOrDefault(x => x.tenNhaCungCap == cbb_nhaCC.Text).IDNhaCungCap;
                 _sanphamCT.IDHangSX = _qlhangSXServices.GetHangSXFromDB().FirstOrDefault(x => x.tenHangSX == cbb_hangSX.Text).IDHangSX;
