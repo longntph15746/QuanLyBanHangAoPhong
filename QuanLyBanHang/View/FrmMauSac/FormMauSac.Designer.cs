@@ -59,6 +59,15 @@
             // 
             // dtgv_MauSac
             // 
+            this.dtgv_MauSac.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgv_MauSac.Location = new System.Drawing.Point(8, 25);
+            this.dtgv_MauSac.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.dtgv_MauSac.Name = "dtgv_MauSac";
+            this.dtgv_MauSac.RowHeadersWidth = 51;
+            this.dtgv_MauSac.RowTemplate.Height = 29;
+            this.dtgv_MauSac.Size = new System.Drawing.Size(866, 254);
+            this.dtgv_MauSac.TabIndex = 0;
+            this.dtgv_MauSac.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_MauSac_CellClick);
             dtgv_MauSac.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgv_MauSac.Location = new Point(8, 25);
             dtgv_MauSac.Margin = new Padding(4, 3, 4, 3);
@@ -153,6 +162,25 @@
             // 
             // btn_Sua
             // 
+            this.btn_Sua.Location = new System.Drawing.Point(52, 112);
+            this.btn_Sua.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btn_Sua.Name = "btn_Sua";
+            this.btn_Sua.Size = new System.Drawing.Size(181, 39);
+            this.btn_Sua.TabIndex = 1;
+            this.btn_Sua.Text = "CẬP NHẬP";
+            this.btn_Sua.UseVisualStyleBackColor = true;
+            this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
+            // 
+            // btn_Them
+            // 
+            this.btn_Them.Location = new System.Drawing.Point(52, 48);
+            this.btn_Them.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btn_Them.Name = "btn_Them";
+            this.btn_Them.Size = new System.Drawing.Size(181, 39);
+            this.btn_Them.TabIndex = 0;
+            this.btn_Them.Text = "THÊM";
+            this.btn_Them.UseVisualStyleBackColor = true;
+            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             btn_Sua.Location = new Point(52, 112);
             btn_Sua.Margin = new Padding(4, 3, 4, 3);
             btn_Sua.Name = "btn_Sua";

@@ -128,6 +128,25 @@
             // 
             // btn_Sua
             // 
+            this.btn_Sua.Location = new System.Drawing.Point(52, 112);
+            this.btn_Sua.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btn_Sua.Name = "btn_Sua";
+            this.btn_Sua.Size = new System.Drawing.Size(181, 39);
+            this.btn_Sua.TabIndex = 1;
+            this.btn_Sua.Text = "CẬP NHẬP";
+            this.btn_Sua.UseVisualStyleBackColor = true;
+            this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
+            // 
+            // btn_Them
+            // 
+            this.btn_Them.Location = new System.Drawing.Point(52, 48);
+            this.btn_Them.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btn_Them.Name = "btn_Them";
+            this.btn_Them.Size = new System.Drawing.Size(181, 39);
+            this.btn_Them.TabIndex = 0;
+            this.btn_Them.Text = "THÊM";
+            this.btn_Them.UseVisualStyleBackColor = true;
+            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             btn_Sua.Location = new Point(52, 112);
             btn_Sua.Margin = new Padding(4, 3, 4, 3);
             btn_Sua.Name = "btn_Sua";
@@ -162,6 +181,40 @@
             // 
             // dtgv_Size
             // 
+            this.dtgv_Size.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgv_Size.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3});
+            this.dtgv_Size.Location = new System.Drawing.Point(8, 25);
+            this.dtgv_Size.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.dtgv_Size.Name = "dtgv_Size";
+            this.dtgv_Size.RowHeadersWidth = 51;
+            this.dtgv_Size.RowTemplate.Height = 29;
+            this.dtgv_Size.Size = new System.Drawing.Size(866, 254);
+            this.dtgv_Size.TabIndex = 0;
+            this.dtgv_Size.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_Size_CellClick);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "ID Size";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 125;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Tên Size";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 125;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Trạng thái";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 125;
             dtgv_Size.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgv_Size.Location = new Point(8, 25);
             dtgv_Size.Margin = new Padding(4, 3, 4, 3);
