@@ -332,7 +332,7 @@ namespace QuanLyBanHang.View.FrmBanHang
             {
                 var hoaDon = new hoaDon()
                 {
-                    IDNhanVien = _qLnhanVien.GetNhanVienFromDB().FirstOrDefault(x => x.chucVus.tenCV == "Quản lý").nhanViens.IDNhanVien,
+                    IDNhanVien = _qLnhanVien.GetNhanVienFromDB().FirstOrDefault(x => x.nhanViens.email == Properties.Settings.Default.email).nhanViens.IDNhanVien,
                     SDT_KH = txt_SDT.Text,
                     ngayBan = DateTime.Now,
                     tongTien = 0,
