@@ -197,7 +197,8 @@ namespace QuanLyBanHang.View.FrmTrangChu
 
         private void btn_khachHang_Click(object sender, EventArgs e)
         {
-            
+            //OpenChildForm(new FormKhachHang(), sender);
+            //lbl_Home.Text = btn_khachHang.Text;
         }
     }
 }
