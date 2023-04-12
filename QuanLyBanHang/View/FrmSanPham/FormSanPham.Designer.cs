@@ -62,6 +62,7 @@
             this.btn_CapNhap = new System.Windows.Forms.Button();
             this.btn_Them = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.txt_timKiem = new System.Windows.Forms.TextBox();
             this.dtgv_SPCT = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,7 +76,6 @@
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txt_timKiem = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptb_Anh)).BeginInit();
@@ -388,6 +388,7 @@
             this.ptb_Anh.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ptb_Anh.Name = "ptb_Anh";
             this.ptb_Anh.Size = new System.Drawing.Size(221, 242);
+            this.ptb_Anh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptb_Anh.TabIndex = 0;
             this.ptb_Anh.TabStop = false;
             // 
@@ -449,6 +450,14 @@
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Dữ liệu";
+            // 
+            // txt_timKiem
+            // 
+            this.txt_timKiem.Location = new System.Drawing.Point(1238, 26);
+            this.txt_timKiem.Name = "txt_timKiem";
+            this.txt_timKiem.Size = new System.Drawing.Size(269, 27);
+            this.txt_timKiem.TabIndex = 1;
+            this.txt_timKiem.TextChanged += new System.EventHandler(this.txt_timKiem_TextChanged);
             // 
             // dtgv_SPCT
             // 
@@ -558,14 +567,6 @@
             this.Column12.MinimumWidth = 6;
             this.Column12.Name = "Column12";
             this.Column12.Width = 125;
-            // 
-            // txt_timKiem
-            // 
-            this.txt_timKiem.Location = new System.Drawing.Point(1238, 26);
-            this.txt_timKiem.Name = "txt_timKiem";
-            this.txt_timKiem.Size = new System.Drawing.Size(269, 27);
-            this.txt_timKiem.TabIndex = 1;
-            this.txt_timKiem.TextChanged += new System.EventHandler(this.txt_timKiem_TextChanged);
             // 
             // FormSanPham
             // 

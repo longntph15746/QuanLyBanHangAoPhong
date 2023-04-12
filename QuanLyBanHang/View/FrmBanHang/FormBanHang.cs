@@ -115,8 +115,7 @@ namespace QuanLyBanHang.View.FrmBanHang
                 cbb_KhachHang.Items.Add(item.TenKH);
             }
         }
-
-        private void dtgv_DSSP_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dtgv_DSSP_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex == -1 || e.RowIndex >= _qlSanPhamCT.GetSanPhamCTTFromDB().Count) return;
             DataGridViewRow r = new DataGridViewRow();
@@ -127,7 +126,6 @@ namespace QuanLyBanHang.View.FrmBanHang
                 themGioHang(spct.IDSanPhamChiTiet);
             }
         }
-
         public void timKiemSPCT()
         {
             var listSPCT = _qlSanPhamCT.getViewSPCT().Where(x => x.SanPhamChiTiets.soLuong > 0);
@@ -154,23 +152,19 @@ namespace QuanLyBanHang.View.FrmBanHang
             }
         }
 
-
-        private void cbb_size_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbb_size_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             timKiemSPCT();
         }
-
-        private void cbb_mauSac_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbb_mauSac_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             timKiemSPCT();
         }
-
-        private void cbb_hangSX_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbb_hangSX_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             timKiemSPCT();
         }
-
-        private void txt_TimKiem_TextChanged(object sender, EventArgs e)
+        private void txt_TimKiem_TextChanged_1(object sender, EventArgs e)
         {
             timKiemSPCT();
         }
@@ -220,15 +214,13 @@ namespace QuanLyBanHang.View.FrmBanHang
                 dtgv_gioHang.Rows.Add(item.ID, item.maSanPham, item.tenSanPham, item.soLuong, item.donGia);
             }
         }
-
-        private void dtgv_gioHang_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dtgv_gioHang_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex == -1 || e.RowIndex >= _lstViewHoaDonCT.Count) return;
             DataGridViewRow r = dtgv_gioHang.Rows[e.RowIndex];
             IdSPinGioHang = Convert.ToInt32(r.Cells[0].Value);
         }
-
-        private void btn_XoaSP_Click(object sender, EventArgs e)
+        private void btn_XoaSP_Click_1(object sender, EventArgs e)
         {
             if (_lstViewHoaDonCT.Any())
             {
@@ -248,8 +240,7 @@ namespace QuanLyBanHang.View.FrmBanHang
                 MessageBox.Show("Chưa có sản phẩm nào trong giỏ hàng!");
             }
         }
-
-        private void btn_XoaGH_Click(object sender, EventArgs e)
+        private void btn_XoaGH_Click_1(object sender, EventArgs e)
         {
             if (_lstViewHoaDonCT.Any())
             {
@@ -261,10 +252,9 @@ namespace QuanLyBanHang.View.FrmBanHang
                 MessageBox.Show("Chưa có sản phẩm nào trong giỏ hàng!");
             }
         }
-
-        private void cbb_KhachHang_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbb_KhachHang_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            if(cbb_KhachHang.SelectedIndex == -1) { return; }
+            if (cbb_KhachHang.SelectedIndex == -1) { return; }
             var kh = _qlKhachHang.GetkhachHangFromDB()[cbb_KhachHang.SelectedIndex];
             if (kh.gioiTinh == true)
             {
@@ -279,13 +269,11 @@ namespace QuanLyBanHang.View.FrmBanHang
             txt_SDT.Text = kh.SDT_KH;
             lbl_diemTichLuy.Text = kh.diemTichluy.ToString();
         }
-
-        private void cbb_KhachHang_TextChanged(object sender, EventArgs e)
+        private void cbb_KhachHang_TextChanged_1(object sender, EventArgs e)
         {
             lbl_diemTichLuy.Text = "...";
         }
-
-        private void btn_ThemKH_Click(object sender, EventArgs e)
+        private void btn_ThemKH_Click_1(object sender, EventArgs e)
         {
             if (txt_SDT.Text == "" || cbb_KhachHang.Text == "")
             {
@@ -320,8 +308,7 @@ namespace QuanLyBanHang.View.FrmBanHang
             rdb_nam.Checked = false;
             LoadKhachHang();
         }
-
-        private void btn_TaoHD_Click(object sender, EventArgs e)
+        private void btn_TaoHD_Click_1(object sender, EventArgs e)
         {
             if (cbb_KhachHang.Text == "")
             {
@@ -364,7 +351,6 @@ namespace QuanLyBanHang.View.FrmBanHang
                 MessageBox.Show("Chưa có sản phẩm nào trong hóa đơn!");
             }
         }
-
         public void ClearForm()
         {
             // Clear thông tin nhân viên
@@ -381,7 +367,6 @@ namespace QuanLyBanHang.View.FrmBanHang
             txt_khachDua.Text = "";
             txt_TienThua.Text = "";
             txt_GhiChu.Text = "";
-
         }
 
         public void loadHDcho()
@@ -402,8 +387,7 @@ namespace QuanLyBanHang.View.FrmBanHang
                 dtgv_HoadonCho.Rows.Add(item.hoaDons.IDHoaDon, item.hoaDons.SDT_KH, item.khachHangs.TenKH, item.nhanViens.IDNhanVien, item.hoaDons.ngayBan);
             }
         }
-
-        private void dtgv_HoadonCho_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dtgv_HoadonCho_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex == -1 || e.RowIndex >= _qlhoaDon.GetHoaDonFromDB().Where(x => x.trangThai == false).Count()) return;
             DataGridViewRow r = dtgv_HoadonCho.Rows[e.RowIndex];
@@ -421,8 +405,7 @@ namespace QuanLyBanHang.View.FrmBanHang
             txt_khachDua.Text = "0";
             txt_giamGia.Text = "0";
         }
-
-        private void txt_giamGia_TextChanged(object sender, EventArgs e)
+        private void txt_giamGia_TextChanged_1(object sender, EventArgs e)
         {
             if (HoaDon == null) return;
             if (txt_giamGia.Text == "")
@@ -467,15 +450,14 @@ namespace QuanLyBanHang.View.FrmBanHang
                 txt_TienThua.Text = tienThua.ToString();
             }
         }
-
-        private void txt_khachDua_TextChanged(object sender, EventArgs e)
+        private void txt_khachDua_TextChanged_1(object sender, EventArgs e)
         {
             if (HoaDon == null) return;
             if (txt_khachDua.Text == "")
             {
                 txt_khachDua.Text = "0";
             }
-            if(txt_TongTien.Text == "")
+            if (txt_TongTien.Text == "")
             {
                 txt_TongTien.Text = "0";
             }
@@ -498,8 +480,7 @@ namespace QuanLyBanHang.View.FrmBanHang
                 txt_TienThua.Text = tienThua.ToString();
             }
         }
-
-        private void btnThanhToan_Click(object sender, EventArgs e)
+        private void btnThanhToan_Click_1(object sender, EventArgs e)
         {
             if (HoaDon == null)
             {

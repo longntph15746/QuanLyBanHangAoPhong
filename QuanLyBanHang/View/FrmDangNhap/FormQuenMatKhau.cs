@@ -42,7 +42,7 @@ namespace QuanLyBanHang.View.FrmDangNhap
                     otp = random.Next(100000, 1000000);
                     var fromEmail = new MailAddress(qLnhanVienServices.GetNhanVienFromDB().FirstOrDefault(x => x.chucVus.tenCV == "Quản lý").nhanViens.email);
                     var toEmail = new MailAddress(txt_Email.Text);
-                    const string pass = "tqyqkjuktjhuopym";
+                    const string pass = "hvjpthwtywfgwqgr";
 
                     var smtp = new SmtpClient
                     {

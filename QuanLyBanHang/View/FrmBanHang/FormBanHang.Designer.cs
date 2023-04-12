@@ -105,6 +105,7 @@ namespace QuanLyBanHang.View.FrmBanHang
             this.txt_TimKiem.Name = "txt_TimKiem";
             this.txt_TimKiem.Size = new System.Drawing.Size(201, 27);
             this.txt_TimKiem.TabIndex = 8;
+            this.txt_TimKiem.TextChanged += new System.EventHandler(this.txt_TimKiem_TextChanged_1);
             // 
             // cbb_hangSX
             // 
@@ -113,6 +114,7 @@ namespace QuanLyBanHang.View.FrmBanHang
             this.cbb_hangSX.Name = "cbb_hangSX";
             this.cbb_hangSX.Size = new System.Drawing.Size(124, 27);
             this.cbb_hangSX.TabIndex = 7;
+            this.cbb_hangSX.SelectedIndexChanged += new System.EventHandler(this.cbb_hangSX_SelectedIndexChanged_1);
             // 
             // cbb_mauSac
             // 
@@ -121,6 +123,7 @@ namespace QuanLyBanHang.View.FrmBanHang
             this.cbb_mauSac.Name = "cbb_mauSac";
             this.cbb_mauSac.Size = new System.Drawing.Size(122, 27);
             this.cbb_mauSac.TabIndex = 6;
+            this.cbb_mauSac.SelectedIndexChanged += new System.EventHandler(this.cbb_mauSac_SelectedIndexChanged_1);
             // 
             // cbb_size
             // 
@@ -129,6 +132,7 @@ namespace QuanLyBanHang.View.FrmBanHang
             this.cbb_size.Name = "cbb_size";
             this.cbb_size.Size = new System.Drawing.Size(89, 27);
             this.cbb_size.TabIndex = 5;
+            this.cbb_size.SelectedIndexChanged += new System.EventHandler(this.cbb_size_SelectedIndexChanged_1);
             // 
             // label4
             // 
@@ -176,6 +180,7 @@ namespace QuanLyBanHang.View.FrmBanHang
             this.dtgv_DSSP.RowTemplate.Height = 29;
             this.dtgv_DSSP.Size = new System.Drawing.Size(952, 279);
             this.dtgv_DSSP.TabIndex = 0;
+            this.dtgv_DSSP.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_DSSP_CellClick_1);
             // 
             // groupBox2
             // 
@@ -199,6 +204,7 @@ namespace QuanLyBanHang.View.FrmBanHang
             this.btn_TaoHD.TabIndex = 3;
             this.btn_TaoHD.Text = "Tạo hóa đơn";
             this.btn_TaoHD.UseVisualStyleBackColor = true;
+            this.btn_TaoHD.Click += new System.EventHandler(this.btn_TaoHD_Click_1);
             // 
             // btn_XoaGH
             // 
@@ -208,6 +214,7 @@ namespace QuanLyBanHang.View.FrmBanHang
             this.btn_XoaGH.TabIndex = 2;
             this.btn_XoaGH.Text = "Xóa giỏ hàng";
             this.btn_XoaGH.UseVisualStyleBackColor = true;
+            this.btn_XoaGH.Click += new System.EventHandler(this.btn_XoaGH_Click_1);
             // 
             // btn_XoaSP
             // 
@@ -217,6 +224,7 @@ namespace QuanLyBanHang.View.FrmBanHang
             this.btn_XoaSP.TabIndex = 1;
             this.btn_XoaSP.Text = "Xóa sản phẩm";
             this.btn_XoaSP.UseVisualStyleBackColor = true;
+            this.btn_XoaSP.Click += new System.EventHandler(this.btn_XoaSP_Click_1);
             // 
             // dtgv_gioHang
             // 
@@ -228,6 +236,7 @@ namespace QuanLyBanHang.View.FrmBanHang
             this.dtgv_gioHang.RowTemplate.Height = 29;
             this.dtgv_gioHang.Size = new System.Drawing.Size(533, 208);
             this.dtgv_gioHang.TabIndex = 0;
+            this.dtgv_gioHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_gioHang_CellClick_1);
             // 
             // groupBox3
             // 
@@ -256,6 +265,8 @@ namespace QuanLyBanHang.View.FrmBanHang
             this.cbb_KhachHang.Name = "cbb_KhachHang";
             this.cbb_KhachHang.Size = new System.Drawing.Size(225, 27);
             this.cbb_KhachHang.TabIndex = 14;
+            this.cbb_KhachHang.SelectedIndexChanged += new System.EventHandler(this.cbb_KhachHang_SelectedIndexChanged_1);
+            this.cbb_KhachHang.TextChanged += new System.EventHandler(this.cbb_KhachHang_TextChanged_1);
             // 
             // rdb_nu
             // 
@@ -296,6 +307,7 @@ namespace QuanLyBanHang.View.FrmBanHang
             this.btn_ThemKH.TabIndex = 6;
             this.btn_ThemKH.Text = "Thêm nhanh khách hàng";
             this.btn_ThemKH.UseVisualStyleBackColor = true;
+            this.btn_ThemKH.Click += new System.EventHandler(this.btn_ThemKH_Click_1);
             // 
             // txt_SDT
             // 
@@ -361,6 +373,7 @@ namespace QuanLyBanHang.View.FrmBanHang
             this.dtgv_HoadonCho.RowTemplate.Height = 29;
             this.dtgv_HoadonCho.Size = new System.Drawing.Size(323, 247);
             this.dtgv_HoadonCho.TabIndex = 0;
+            this.dtgv_HoadonCho.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_HoadonCho_CellClick_1);
             // 
             // groupBox5
             // 
@@ -393,6 +406,7 @@ namespace QuanLyBanHang.View.FrmBanHang
             this.btnThanhToan.TabIndex = 15;
             this.btnThanhToan.Text = "Thanh toán";
             this.btnThanhToan.UseVisualStyleBackColor = true;
+            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click_1);
             // 
             // txt_GhiChu
             // 
@@ -424,6 +438,7 @@ namespace QuanLyBanHang.View.FrmBanHang
             this.txt_khachDua.Name = "txt_khachDua";
             this.txt_khachDua.Size = new System.Drawing.Size(193, 27);
             this.txt_khachDua.TabIndex = 8;
+            this.txt_khachDua.TextChanged += new System.EventHandler(this.txt_khachDua_TextChanged_1);
             // 
             // txt_giamGia
             // 
@@ -431,6 +446,7 @@ namespace QuanLyBanHang.View.FrmBanHang
             this.txt_giamGia.Name = "txt_giamGia";
             this.txt_giamGia.Size = new System.Drawing.Size(193, 27);
             this.txt_giamGia.TabIndex = 7;
+            this.txt_giamGia.TextChanged += new System.EventHandler(this.txt_giamGia_TextChanged_1);
             // 
             // txt_MaHD
             // 
