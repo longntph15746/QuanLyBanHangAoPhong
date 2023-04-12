@@ -67,6 +67,7 @@
             this.dtgv_MauSac.RowTemplate.Height = 29;
             this.dtgv_MauSac.Size = new System.Drawing.Size(866, 254);
             this.dtgv_MauSac.TabIndex = 0;
+            this.dtgv_MauSac.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_MauSac_CellClick);
             // 
             // groupBox1
             // 
@@ -158,6 +159,7 @@
             this.btn_Sua.TabIndex = 1;
             this.btn_Sua.Text = "CẬP NHẬP";
             this.btn_Sua.UseVisualStyleBackColor = true;
+            this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
             // 
             // btn_Them
             // 
@@ -168,6 +170,7 @@
             this.btn_Them.TabIndex = 0;
             this.btn_Them.Text = "THÊM";
             this.btn_Them.UseVisualStyleBackColor = true;
+            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
             // FormMauSac
             // 

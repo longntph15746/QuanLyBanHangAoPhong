@@ -25,7 +25,7 @@ namespace DAL_QuanLy.Context
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(@"Data Source=LongNT;Initial Catalog=TshirtProject;Trusted_Connection=True;Integrated Security=True");
+                optionsBuilder.UseSqlServer(@"Data Source=LAPTOP-8ADB1EO8;Initial Catalog=TshirtProject;Trusted_Connection=True;Integrated Security=True");
             }
         }
         public DbSet<chucVu> chucVus { get; set; }
