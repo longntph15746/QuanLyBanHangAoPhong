@@ -36,7 +36,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rdb_hetHang = new System.Windows.Forms.RadioButton();
             this.rdb_conHang = new System.Windows.Forms.RadioButton();
-            this.txt_TenMauSac = new System.Windows.Forms.TextBox();
+            this.txt_Chatlieu = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
@@ -67,6 +67,7 @@
             this.dtgv_ChatLieu.RowTemplate.Height = 29;
             this.dtgv_ChatLieu.Size = new System.Drawing.Size(866, 254);
             this.dtgv_ChatLieu.TabIndex = 0;
+            this.dtgv_ChatLieu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_ChatLieu_CellClick);
             // 
             // groupBox2
             // 
@@ -90,6 +91,7 @@
             this.btn_Sua.TabIndex = 1;
             this.btn_Sua.Text = "CẬP NHẬP";
             this.btn_Sua.UseVisualStyleBackColor = true;
+            this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
             // 
             // btn_Them
             // 
@@ -100,12 +102,13 @@
             this.btn_Them.TabIndex = 0;
             this.btn_Them.Text = "THÊM";
             this.btn_Them.UseVisualStyleBackColor = true;
+            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.rdb_hetHang);
             this.groupBox1.Controls.Add(this.rdb_conHang);
-            this.groupBox1.Controls.Add(this.txt_TenMauSac);
+            this.groupBox1.Controls.Add(this.txt_Chatlieu);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(15, 11);
@@ -141,13 +144,14 @@
             this.rdb_conHang.Text = "Còn hàng";
             this.rdb_conHang.UseVisualStyleBackColor = true;
             // 
-            // txt_TenMauSac
+            // txt_Chatlieu
             // 
-            this.txt_TenMauSac.Location = new System.Drawing.Point(206, 46);
-            this.txt_TenMauSac.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txt_TenMauSac.Name = "txt_TenMauSac";
-            this.txt_TenMauSac.Size = new System.Drawing.Size(320, 27);
-            this.txt_TenMauSac.TabIndex = 2;
+            this.txt_Chatlieu.Location = new System.Drawing.Point(206, 46);
+            this.txt_Chatlieu.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txt_Chatlieu.Name = "txt_Chatlieu";
+            this.txt_Chatlieu.Size = new System.Drawing.Size(320, 27);
+            this.txt_Chatlieu.TabIndex = 2;
+            this.txt_Chatlieu.TextChanged += new System.EventHandler(this.txt_TenMauSac_TextChanged);
             // 
             // label2
             // 
@@ -200,7 +204,7 @@
         private GroupBox groupBox1;
         private RadioButton rdb_hetHang;
         private RadioButton rdb_conHang;
-        private TextBox txt_TenMauSac;
+        private TextBox txt_Chatlieu;
         private Label label2;
         private Label label1;
     }

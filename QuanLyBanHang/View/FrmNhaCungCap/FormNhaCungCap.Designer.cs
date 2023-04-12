@@ -34,8 +34,8 @@
             this.btn_Sua = new System.Windows.Forms.Button();
             this.btn_Them = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rbHethang = new System.Windows.Forms.RadioButton();
+            this.rbConhang = new System.Windows.Forms.RadioButton();
             this.txt_TenNhaCC = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -67,6 +67,7 @@
             this.dtgv_nhaCC.RowTemplate.Height = 29;
             this.dtgv_nhaCC.Size = new System.Drawing.Size(866, 254);
             this.dtgv_nhaCC.TabIndex = 0;
+            this.dtgv_nhaCC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_nhaCC_CellClick);
             // 
             // groupBox2
             // 
@@ -90,6 +91,7 @@
             this.btn_Sua.TabIndex = 1;
             this.btn_Sua.Text = "CẬP NHẬP";
             this.btn_Sua.UseVisualStyleBackColor = true;
+            this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
             // 
             // btn_Them
             // 
@@ -100,11 +102,12 @@
             this.btn_Them.TabIndex = 0;
             this.btn_Them.Text = "THÊM";
             this.btn_Them.UseVisualStyleBackColor = true;
+            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.rbHethang);
+            this.groupBox1.Controls.Add(this.rbConhang);
             this.groupBox1.Controls.Add(this.txt_TenNhaCC);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
@@ -117,29 +120,29 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nhà cung cấp";
             // 
-            // radioButton2
+            // rbHethang
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(396, 96);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(96, 23);
-            this.radioButton2.TabIndex = 4;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Hết hàng";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbHethang.AutoSize = true;
+            this.rbHethang.Location = new System.Drawing.Point(396, 96);
+            this.rbHethang.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.rbHethang.Name = "rbHethang";
+            this.rbHethang.Size = new System.Drawing.Size(96, 23);
+            this.rbHethang.TabIndex = 4;
+            this.rbHethang.TabStop = true;
+            this.rbHethang.Text = "Hết hàng";
+            this.rbHethang.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rbConhang
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(226, 96);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(99, 23);
-            this.radioButton1.TabIndex = 3;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Còn hàng";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbConhang.AutoSize = true;
+            this.rbConhang.Location = new System.Drawing.Point(226, 96);
+            this.rbConhang.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.rbConhang.Name = "rbConhang";
+            this.rbConhang.Size = new System.Drawing.Size(99, 23);
+            this.rbConhang.TabIndex = 3;
+            this.rbConhang.TabStop = true;
+            this.rbConhang.Text = "Còn hàng";
+            this.rbConhang.UseVisualStyleBackColor = true;
             // 
             // txt_TenNhaCC
             // 
@@ -198,8 +201,8 @@
         private Button btn_Sua;
         private Button btn_Them;
         private GroupBox groupBox1;
-        private RadioButton radioButton2;
-        private RadioButton radioButton1;
+        private RadioButton rbHethang;
+        private RadioButton rbConhang;
         private TextBox txt_TenNhaCC;
         private Label label2;
         private Label label1;
