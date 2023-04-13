@@ -3,15 +3,7 @@ using _2.BUS.Services;
 using _2_BUS_QUANLY.IServices;
 using _2_BUS_QUANLY.ViewModel;
 using OfficeOpenXml;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace QuanLyBanHang.View.FrmBanHang
 {
@@ -46,7 +38,7 @@ namespace QuanLyBanHang.View.FrmBanHang
             _qLnhanVien = new QLnhanVienServices();
             _lstViewHoaDonCT = new List<ViewHoaDonCT>();
             KH = new khachHang();
-            oID = -1;
+            oID = 5;
             LoadSanPham();
             LoadHangSX();
             LoadMauSac();
@@ -284,7 +276,6 @@ namespace QuanLyBanHang.View.FrmBanHang
                 MessageBox.Show("Vui lòng nhập đủ thông tin!");
                 return;
             }
-
             var listKH = _qlKhachHang.GetkhachHangFromDB();
             foreach (var item in listKH)
             {
@@ -294,7 +285,6 @@ namespace QuanLyBanHang.View.FrmBanHang
                     return;
                 }
             }
-
             var kh = new khachHang();
             kh.SDT_KH = txt_SDT.Text;
             kh.TenKH = cbb_KhachHang.Text;
@@ -302,7 +292,6 @@ namespace QuanLyBanHang.View.FrmBanHang
             kh.diaChi = "";
             kh.trangThai = true;
             kh.diemTichluy = 0;
-
             _qlKhachHang.addkhachHang(kh);
             MessageBox.Show("Thêm khách hàng mới thành công!");
             txt_SDT.Text = "";
@@ -321,29 +310,60 @@ namespace QuanLyBanHang.View.FrmBanHang
             }
             if (_lstViewHoaDonCT.Any())
             {
-                var hoaDon = new hoaDon()
+                var existHD = _qlhoaDon.GetHoaDonFromDB().Where(x => x.trangThai == false).FirstOrDefault(x => x.SDT_KH == txt_SDT.Text);
+                if (existHD != null)
                 {
-                    IDNhanVien = _qLnhanVien.GetNhanVienFromDB().FirstOrDefault(x => x.nhanViens.email == Properties.Settings.Default.email).nhanViens.IDNhanVien,
-                    SDT_KH = txt_SDT.Text,
-                    ngayBan = DateTime.Now,
-                    tongTien = 0,
-                    ghiChu = "",
-                    trangThai = false,
-                };
-                _qlhoaDon.addHoaDon(hoaDon);
-                foreach (var item in _lstViewHoaDonCT)
-                {
-                    var hdct = new hoaDonChiTiet()
+                    foreach (var item in _lstViewHoaDonCT)
                     {
-                        IDHoaDon = hoaDon.IDHoaDon,
-                        IDSanPham = item.ID,
-                        Soluong = item.soLuong,
-                        donGia = item.donGia,
-                        Trangthai = true,
-                    };
-                    _qlhoaDonChiTiet.addHoaDonChiTiet(hdct);
+                        var existHDCT = _qlhoaDonChiTiet.GetHoaDonChiTietFromDB().Where(x => x.IDHoaDon == existHD.IDHoaDon).FirstOrDefault(x => x.IDSanPham == item.ID);
+                        if (existHDCT != null)
+                        {
+                            existHDCT.Soluong += item.soLuong;
+                            _qlhoaDonChiTiet.UpdateHoaDonChiTiet(existHDCT);
+                        }
+                        else
+                        {
+                            var hdct = new hoaDonChiTiet()
+                            {
+                                IDHoaDon = existHD.IDHoaDon,
+                                IDSanPham = item.ID,
+                                Soluong = item.soLuong,
+                                donGia = item.donGia,
+                                Trangthai = true,
+                            };
+                            _qlhoaDonChiTiet.addHoaDonChiTiet(hdct);
+                        }
+                    }
+                    MessageBox.Show("Đã gộp với hóa đơn chờ có sẵn!");
                 }
-                MessageBox.Show("Tạo hóa đơn thành công!");
+                else
+                {
+                    var hoaDon = new hoaDon()
+                    {
+                        IDNhanVien = _qLnhanVien.GetNhanVienFromDB().FirstOrDefault(x => x.chucVus.tenCV == "Quản lý").nhanViens.IDNhanVien,
+                        SDT_KH = txt_SDT.Text,
+                        ngayBan = DateTime.Now,
+                        tongTien = 0,
+                        ghiChu = "",
+                        trangThai = false,
+                    };
+                    _qlhoaDon.addHoaDon(hoaDon);
+                    foreach (var item in _lstViewHoaDonCT)
+                    {
+                        var hdct = new hoaDonChiTiet()
+                        {
+                            IDHoaDon = hoaDon.IDHoaDon,
+                            IDSanPham = item.ID,
+                            Soluong = item.soLuong,
+                            donGia = item.donGia,
+                            Trangthai = true,
+                        };
+                        _qlhoaDonChiTiet.addHoaDonChiTiet(hdct);
+                    }
+                    MessageBox.Show("Tạo hóa đơn thành công!");
+                }
+
+
                 _lstViewHoaDonCT = new List<ViewHoaDonCT>();
                 IdSPinGioHang = -1;
                 loadGioHang();
@@ -501,18 +521,24 @@ namespace QuanLyBanHang.View.FrmBanHang
                 {
                     var sp = _qlSanPhamCT.GetSanPhamCTTFromDB().FirstOrDefault(x => x.IDSanPhamChiTiet == item.IDSanPham);
                     sp.soLuong -= item.Soluong;
-                    if(sp.soLuong == 0)
-                    {
-                        sp.trangThai = false;
-                    }
                     _qlSanPhamCT.UpdateSanPham(sp);
                 }
 
-                // Trừ số điểm tích lũy đã dùng
+                // Trừ số điểm tích lũy đã dùng + điểm tích lũy cộng thêm
                 var kh = _qlKhachHang.GetkhachHangFromDB().FirstOrDefault(x => x.SDT_KH == txt_SDT.Text);
                 var diemDaDung = Convert.ToInt32(txt_giamGia.Text);
-                kh.diemTichluy = kh.diemTichluy - diemDaDung;
+
+                var listHDCT = _qlhoaDonChiTiet.GetHoaDonChiTietFromDB().Where(x => x.IDHoaDon == HoaDon.IDHoaDon);
+                int tongTien = 0;
+                foreach (var item in listHDCT)
+                {
+                    tongTien += Convert.ToInt32(item.donGia) * item.Soluong;
+                }
+                var diemCongThem = tongTien / 10000;
+
+                kh.diemTichluy = kh.diemTichluy - diemDaDung + diemCongThem;
                 _qlKhachHang.UpdateKhachHang(kh);
+
 
                 HoaDon.trangThai = true;
                 HoaDon.ngayBan = DateTime.Now;
@@ -523,7 +549,7 @@ namespace QuanLyBanHang.View.FrmBanHang
                 LoadSanPham();
                 ClearForm();
                 HoaDon = null;
-                MessageBox.Show("Thanh toán thành công!");
+                MessageBox.Show($"Thanh toán thành công, điểm tích lũy hiện tại của quý khách là {kh.diemTichluy}!");
                 InHoaDon();
             }
         }
@@ -578,9 +604,6 @@ namespace QuanLyBanHang.View.FrmBanHang
             {
                 MessageBox.Show("Chưa có sản phẩm nào trong hóa đơn!");
             }
-            _lstViewHoaDonCT = new List<ViewHoaDonCT>();
-            IdSPinGioHang = -1;
-            loadGioHang();
         }
         private void InHoaDon()
         {
@@ -649,7 +672,6 @@ namespace QuanLyBanHang.View.FrmBanHang
                 File.WriteAllBytes(path, bin);
             };
         }
-
         private void pdhd_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             var hd = _qlhoaDon.GetHoaDonFromDB().FirstOrDefault(c => c.IDHoaDon == oID);
