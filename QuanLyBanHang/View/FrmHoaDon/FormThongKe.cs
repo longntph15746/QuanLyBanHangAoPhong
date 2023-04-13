@@ -126,64 +126,32 @@ namespace QuanLyBanHang.View.FrmHoaDon
 
         private void btn_xuatEx_Click(object sender, EventArgs e)
         {
-            string filePath = "";
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Title = "Export Excel";
-            saveFileDialog.Filter = "Excel | *.xlsx | Excel 2003 | *.xls";
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                filePath = saveFileDialog.FileName;
-                try
-                {
-                    senderexcel(filePath);
-                    MessageBox.Show("Xuất file Excel thành công");
-                }
-                catch (Exception ex)
-                {
+            Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbook workbook = excel.Workbooks.Add(Type.Missing);
 
-                    MessageBox.Show("Xuất file Excel thất bại" + ex.Message);
+            Microsoft.Office.Interop.Excel.Worksheet worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.ActiveSheet;
+            worksheet.Name = "Thong ke";
+
+            for (int i = 0; i < dtgv_hanghoa.Columns.Count; i++)
+            {
+                worksheet.Cells[1, i + 1].Value = dtgv_hanghoa.Columns[i].HeaderText;
+            }
+            for (int i = 0; i < dtgv_hanghoa.Rows.Count; i++)
+            {
+                for (int j = 0; j < dtgv_hanghoa.Columns.Count; j++)
+                {
+                    worksheet.Cells[i + 2, j + 1].Value = dtgv_hanghoa.Rows[i].Cells[j].Value;
                 }
             }
-        }
 
-        private void senderexcel(string path)
-        {
-            using (ExcelPackage p = new ExcelPackage())
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Excel Files|*.xlsx;*.xls;*.csv";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                // đặt tên người tạo file
-                p.Workbook.Properties.Author = "";
+                workbook.SaveAs(saveFileDialog.FileName);
+            }
 
-                // đặt tiêu đề cho file
-                p.Workbook.Properties.Title = "Báo cáo thống kê";
-
-                //Tạo một sheet để làm việc trên đó
-                p.Workbook.Worksheets.Add("sheet");
-
-                // lấy sheet vừa add ra để thao tác
-                ExcelWorksheet ws = p.Workbook.Worksheets[1];
-
-                // đặt tên cho sheet
-                ws.Name = "sheet";
-                // fontsize mặc định cho cả sheet
-                ws.Cells.Style.Font.Size = 11;
-                // font family mặc định cho cả sheet
-                ws.Cells.Style.Font.Name = "Calibri";
-
-                for (int i = 0; i < dtgv_hanghoa.Columns.Count; i++)
-                {
-                    ws.Cells[1, i + 1].Value = dtgv_hanghoa.Columns[i].HeaderText;
-                }
-                for (int i = 0; i < dtgv_hanghoa.Rows.Count; i++)
-                {
-                    for (int j = 0; j < dtgv_hanghoa.Columns.Count; j++)
-                    {
-                        ws.Cells[i + 2, j + 1].Value = dtgv_hanghoa.Rows[i].Cells[j].Value;
-                    }
-                }
-                //Lưu file lại
-                Byte[] bin = p.GetAsByteArray();
-                File.WriteAllBytes(path, bin);
-            };
+            excel.Quit();
         }
     }
 }
