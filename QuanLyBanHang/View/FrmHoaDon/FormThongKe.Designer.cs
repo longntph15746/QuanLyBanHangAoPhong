@@ -235,7 +235,7 @@
             // 
             // btn_xuatEx
             // 
-            this.btn_xuatEx.Location = new System.Drawing.Point(1262, 19);
+            this.btn_xuatEx.Location = new System.Drawing.Point(1254, 19);
             this.btn_xuatEx.Name = "btn_xuatEx";
             this.btn_xuatEx.Size = new System.Drawing.Size(183, 44);
             this.btn_xuatEx.TabIndex = 1;

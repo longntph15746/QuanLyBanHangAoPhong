@@ -2,7 +2,6 @@
 using _2.BUS.Services;
 using _2_BUS_QUANLY.IServices;
 using _2_BUS_QUANLY.ViewModel;
-using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using OfficeOpenXml;
 
 namespace QuanLyBanHang.View.FrmHoaDon
 {
@@ -136,12 +136,12 @@ namespace QuanLyBanHang.View.FrmHoaDon
                 try
                 {
                     senderexcel(filePath);
-                    MessageBox.Show("Xuất File Excel Thành công");
+                    MessageBox.Show("Xuất file Excel thành công");
                 }
                 catch (Exception ex)
                 {
 
-                    MessageBox.Show("Xuất File Excel không  Thành công" + ex.Message);
+                    MessageBox.Show("Xuất file Excel thất bại" + ex.Message);
                 }
             }
         }
@@ -183,23 +183,6 @@ namespace QuanLyBanHang.View.FrmHoaDon
                 //Lưu file lại
                 Byte[] bin = p.GetAsByteArray();
                 File.WriteAllBytes(path, bin);
-
-                //excel.Application application = new excel.Application();
-                //application.Application.Workbooks.Add(Type.Missing);
-                //for (int i = 0; i < dtgv_hanghoa.Columns.Count; i++)
-                //{
-                //    application.Cells[1, i + 1] = dtgv_hanghoa.Columns[i].HeaderText;
-                //}
-                //for (int i = 0; i < dtgv_hanghoa.Rows.Count; i++)
-                //{
-                //    for (int j = 0; j < dtgv_hanghoa.Columns.Count; j++)
-                //    {
-                //        application.Cells[i + 2, j + 1] = dtgv_hanghoa.Rows[i].Cells[j].Value;
-                //    }
-                //}
-                //application.Columns.AutoFit();
-                //application.ActiveWorkbook.SaveCopyAs(path);
-                //application.ActiveWorkbook.Saved = true;
             };
         }
     }
