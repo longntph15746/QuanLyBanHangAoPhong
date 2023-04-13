@@ -415,6 +415,7 @@
             this.btn_xuatEX.TabIndex = 2;
             this.btn_xuatEX.Text = "XUẤT EXCEL";
             this.btn_xuatEX.UseVisualStyleBackColor = true;
+            this.btn_xuatEX.Click += new System.EventHandler(this.btn_xuatEX_Click);
             // 
             // btn_CapNhap
             // 

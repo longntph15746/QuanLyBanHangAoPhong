@@ -316,11 +316,14 @@ namespace QuanLyBanHang.View.FrmBanHang
             // 
             // btn_ThemKH
             // 
-            this.btn_ThemKH.Location = new System.Drawing.Point(96, 227);
+            this.btn_ThemKH.Image = global::QuanLyBanHang.Properties.Resources.icons8_add_new_32;
+            this.btn_ThemKH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_ThemKH.Location = new System.Drawing.Point(96, 230);
             this.btn_ThemKH.Name = "btn_ThemKH";
-            this.btn_ThemKH.Size = new System.Drawing.Size(241, 40);
+            this.btn_ThemKH.Size = new System.Drawing.Size(231, 49);
             this.btn_ThemKH.TabIndex = 6;
             this.btn_ThemKH.Text = "Thêm nhanh khách hàng";
+            this.btn_ThemKH.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_ThemKH.UseVisualStyleBackColor = true;
             this.btn_ThemKH.Click += new System.EventHandler(this.btn_ThemKH_Click_1);
             // 
@@ -415,6 +418,8 @@ namespace QuanLyBanHang.View.FrmBanHang
             // 
             // btnThanhToan
             // 
+            this.btnThanhToan.Image = global::QuanLyBanHang.Properties.Resources.icons8_cash_in_hand_32;
+            this.btnThanhToan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThanhToan.Location = new System.Drawing.Point(78, 335);
             this.btnThanhToan.Name = "btnThanhToan";
             this.btnThanhToan.Size = new System.Drawing.Size(192, 40);

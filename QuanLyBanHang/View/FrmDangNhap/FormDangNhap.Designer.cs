@@ -101,11 +101,14 @@
             // 
             this.btn_dangNhap.BackColor = System.Drawing.Color.Turquoise;
             this.btn_dangNhap.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_dangNhap.Image = global::QuanLyBanHang.Properties.Resources.icons8_login_32;
+            this.btn_dangNhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_dangNhap.Location = new System.Drawing.Point(216, 234);
             this.btn_dangNhap.Name = "btn_dangNhap";
-            this.btn_dangNhap.Size = new System.Drawing.Size(173, 49);
+            this.btn_dangNhap.Size = new System.Drawing.Size(170, 49);
             this.btn_dangNhap.TabIndex = 5;
             this.btn_dangNhap.Text = "ĐĂNG NHẬP";
+            this.btn_dangNhap.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_dangNhap.UseVisualStyleBackColor = false;
             this.btn_dangNhap.Click += new System.EventHandler(this.btn_dangNhap_Click);
             // 

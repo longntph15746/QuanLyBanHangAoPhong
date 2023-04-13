@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.pnl_Menu = new System.Windows.Forms.Panel();
+            this.btn_CV = new System.Windows.Forms.Button();
+            this.btn_khachHang = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_DanhMucHD = new System.Windows.Forms.Button();
             this.btn_Thoat = new System.Windows.Forms.Button();
@@ -50,7 +52,6 @@
             this.btn_X = new System.Windows.Forms.Button();
             this.pnl_ManChinh = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btn_khachHang = new System.Windows.Forms.Button();
             this.pnl_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -62,6 +63,7 @@
             // pnl_Menu
             // 
             this.pnl_Menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.pnl_Menu.Controls.Add(this.btn_CV);
             this.pnl_Menu.Controls.Add(this.btn_khachHang);
             this.pnl_Menu.Controls.Add(this.pictureBox1);
             this.pnl_Menu.Controls.Add(this.btn_DanhMucHD);
@@ -83,6 +85,35 @@
             this.pnl_Menu.Size = new System.Drawing.Size(219, 828);
             this.pnl_Menu.TabIndex = 0;
             // 
+            // btn_CV
+            // 
+            this.btn_CV.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_CV.Image = global::QuanLyBanHang.Properties.Resources.icons8_create_24;
+            this.btn_CV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_CV.Location = new System.Drawing.Point(8, 738);
+            this.btn_CV.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btn_CV.Name = "btn_CV";
+            this.btn_CV.Size = new System.Drawing.Size(199, 40);
+            this.btn_CV.TabIndex = 14;
+            this.btn_CV.Text = "CHỨC VỤ";
+            this.btn_CV.UseVisualStyleBackColor = true;
+            this.btn_CV.Visible = false;
+            this.btn_CV.Click += new System.EventHandler(this.btn_CV_Click);
+            // 
+            // btn_khachHang
+            // 
+            this.btn_khachHang.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_khachHang.Image = global::QuanLyBanHang.Properties.Resources.icons8_user_ninja_32;
+            this.btn_khachHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_khachHang.Location = new System.Drawing.Point(8, 600);
+            this.btn_khachHang.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btn_khachHang.Name = "btn_khachHang";
+            this.btn_khachHang.Size = new System.Drawing.Size(199, 40);
+            this.btn_khachHang.TabIndex = 13;
+            this.btn_khachHang.Text = "KHÁCH HÀNG";
+            this.btn_khachHang.UseVisualStyleBackColor = true;
+            this.btn_khachHang.Click += new System.EventHandler(this.btn_khachHang_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::QuanLyBanHang.Properties.Resources.pngtree_logo_on_selling_t_shirts_png_image_4357278;
@@ -97,6 +128,7 @@
             // btn_DanhMucHD
             // 
             this.btn_DanhMucHD.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_DanhMucHD.Image = global::QuanLyBanHang.Properties.Resources.icons8_paid_bill_321;
             this.btn_DanhMucHD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_DanhMucHD.Location = new System.Drawing.Point(8, 554);
             this.btn_DanhMucHD.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -110,8 +142,9 @@
             // btn_Thoat
             // 
             this.btn_Thoat.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Thoat.Image = global::QuanLyBanHang.Properties.Resources.icons8_logout_32;
             this.btn_Thoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Thoat.Location = new System.Drawing.Point(8, 775);
+            this.btn_Thoat.Location = new System.Drawing.Point(8, 784);
             this.btn_Thoat.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btn_Thoat.Name = "btn_Thoat";
             this.btn_Thoat.Size = new System.Drawing.Size(199, 40);
@@ -123,6 +156,7 @@
             // btn_ThongKe
             // 
             this.btn_ThongKe.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_ThongKe.Image = global::QuanLyBanHang.Properties.Resources.icons8_create_24;
             this.btn_ThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_ThongKe.Location = new System.Drawing.Point(8, 692);
             this.btn_ThongKe.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -136,6 +170,7 @@
             // btn_NhanVien
             // 
             this.btn_NhanVien.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_NhanVien.Image = global::QuanLyBanHang.Properties.Resources.icons8_staff_32;
             this.btn_NhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_NhanVien.Location = new System.Drawing.Point(8, 646);
             this.btn_NhanVien.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -149,6 +184,7 @@
             // btn_HoaDon
             // 
             this.btn_HoaDon.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_HoaDon.Image = global::QuanLyBanHang.Properties.Resources.icons8_paid_bill_32;
             this.btn_HoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_HoaDon.Location = new System.Drawing.Point(8, 508);
             this.btn_HoaDon.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -162,6 +198,7 @@
             // btn_Size
             // 
             this.btn_Size.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Size.Image = global::QuanLyBanHang.Properties.Resources.icons8_cloth_32;
             this.btn_Size.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Size.Location = new System.Drawing.Point(8, 463);
             this.btn_Size.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -175,6 +212,7 @@
             // btn_MauSac
             // 
             this.btn_MauSac.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_MauSac.Image = global::QuanLyBanHang.Properties.Resources.icons8_paint_palette_32;
             this.btn_MauSac.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_MauSac.Location = new System.Drawing.Point(8, 417);
             this.btn_MauSac.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -188,6 +226,7 @@
             // btn_ChatLieu
             // 
             this.btn_ChatLieu.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_ChatLieu.Image = global::QuanLyBanHang.Properties.Resources.icons8_health_graph_32;
             this.btn_ChatLieu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_ChatLieu.Location = new System.Drawing.Point(8, 371);
             this.btn_ChatLieu.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -201,6 +240,7 @@
             // btn_HangSanXuat
             // 
             this.btn_HangSanXuat.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_HangSanXuat.Image = global::QuanLyBanHang.Properties.Resources.icons8_expand_32;
             this.btn_HangSanXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_HangSanXuat.Location = new System.Drawing.Point(8, 326);
             this.btn_HangSanXuat.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -208,12 +248,14 @@
             this.btn_HangSanXuat.Size = new System.Drawing.Size(199, 40);
             this.btn_HangSanXuat.TabIndex = 6;
             this.btn_HangSanXuat.Text = "HÃNG SẢN XUẤT";
+            this.btn_HangSanXuat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_HangSanXuat.UseVisualStyleBackColor = true;
             this.btn_HangSanXuat.Click += new System.EventHandler(this.btn_HangSanXuat_Click);
             // 
             // btn_NhaCungCap
             // 
             this.btn_NhaCungCap.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_NhaCungCap.Image = global::QuanLyBanHang.Properties.Resources.icons8_supplier_32;
             this.btn_NhaCungCap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_NhaCungCap.Location = new System.Drawing.Point(8, 280);
             this.btn_NhaCungCap.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -222,12 +264,14 @@
             this.btn_NhaCungCap.Size = new System.Drawing.Size(199, 40);
             this.btn_NhaCungCap.TabIndex = 4;
             this.btn_NhaCungCap.Text = "NHÀ CUNG CẤP";
+            this.btn_NhaCungCap.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_NhaCungCap.UseVisualStyleBackColor = true;
             this.btn_NhaCungCap.Click += new System.EventHandler(this.btn_NhaCungCap_Click);
             // 
             // btn_SanPham
             // 
             this.btn_SanPham.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_SanPham.Image = global::QuanLyBanHang.Properties.Resources.icons8_product_32;
             this.btn_SanPham.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_SanPham.Location = new System.Drawing.Point(8, 235);
             this.btn_SanPham.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -241,6 +285,7 @@
             // btn_BanHang
             // 
             this.btn_BanHang.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_BanHang.Image = global::QuanLyBanHang.Properties.Resources.icons8_add_shopping_cart_30;
             this.btn_BanHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_BanHang.Location = new System.Drawing.Point(8, 189);
             this.btn_BanHang.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -255,7 +300,8 @@
             // 
             this.btn_TrangChu.BackColor = System.Drawing.Color.White;
             this.btn_TrangChu.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_TrangChu.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btn_TrangChu.Image = global::QuanLyBanHang.Properties.Resources.icons8_home_page_32;
+            this.btn_TrangChu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_TrangChu.Location = new System.Drawing.Point(8, 143);
             this.btn_TrangChu.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btn_TrangChu.Name = "btn_TrangChu";
@@ -344,19 +390,6 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // btn_khachHang
-            // 
-            this.btn_khachHang.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_khachHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_khachHang.Location = new System.Drawing.Point(8, 600);
-            this.btn_khachHang.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btn_khachHang.Name = "btn_khachHang";
-            this.btn_khachHang.Size = new System.Drawing.Size(199, 40);
-            this.btn_khachHang.TabIndex = 13;
-            this.btn_khachHang.Text = "KHÁCH HÀNG";
-            this.btn_khachHang.UseVisualStyleBackColor = true;
-            this.btn_khachHang.Click += new System.EventHandler(this.btn_khachHang_Click);
-            // 
             // FormMenuAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
@@ -403,5 +436,6 @@
         private PictureBox pictureBox2;
         private Button button1;
         private Button btn_khachHang;
+        private Button btn_CV;
     }
 }

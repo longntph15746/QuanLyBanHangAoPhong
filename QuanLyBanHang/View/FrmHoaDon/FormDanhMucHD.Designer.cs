@@ -283,6 +283,7 @@
             // 
             // btn_Them
             // 
+            this.btn_Them.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Them.Location = new System.Drawing.Point(62, 46);
             this.btn_Them.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btn_Them.Name = "btn_Them";
