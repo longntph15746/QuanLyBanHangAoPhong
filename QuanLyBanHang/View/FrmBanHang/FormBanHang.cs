@@ -519,11 +519,12 @@ namespace QuanLyBanHang.View.FrmBanHang
                     _qlSanPhamCT.UpdateSanPham(sp);
                 }
 
-                // Trừ số điểm tích lũy đã dùng
+                // Trừ số điểm tích lũy đã dùng + 
                 var kh = _qlKhachHang.GetkhachHangFromDB().FirstOrDefault(x => x.SDT_KH == txt_SDT.Text);
                 var diemDaDung = Convert.ToInt32(txt_giamGia.Text);
                 kh.diemTichluy = kh.diemTichluy - diemDaDung;
                 _qlKhachHang.UpdateKhachHang(kh);
+
 
                 HoaDon.trangThai = true;
                 HoaDon.ngayBan = DateTime.Now;
@@ -535,6 +536,59 @@ namespace QuanLyBanHang.View.FrmBanHang
                 ClearForm();
                 HoaDon = null;
                 MessageBox.Show("Thanh toán thành công!");
+            }
+        }
+
+        private void btn_thanhtoanngay_Click(object sender, EventArgs e)
+        {
+            if (cbb_KhachHang.Text == "")
+            {
+                MessageBox.Show("Hãy chọn khách hàng!");
+                return;
+            };
+            float tongTien = 0;
+            foreach (var item in _lstViewHoaDonCT)
+            {
+                tongTien += item.donGia * item.soLuong;
+            }
+            txt_TongTien.Text = tongTien.ToString();
+            txt_khachDua.Text = "0";
+            txt_giamGia.Text = "0";
+
+            if (_lstViewHoaDonCT.Any())
+            {
+                var hoaDon = new hoaDon()
+                {
+                    IDNhanVien = _qLnhanVien.GetNhanVienFromDB().FirstOrDefault(x => x.nhanViens.email == Properties.Settings.Default.email).nhanViens.IDNhanVien,
+                    SDT_KH = txt_SDT.Text,
+                    ngayBan = DateTime.Now,
+                    tongTien = tongTien,
+                    ghiChu = "",
+                    trangThai = true,
+                };
+                _qlhoaDon.addHoaDon(hoaDon);
+                foreach (var item in _lstViewHoaDonCT)
+                {
+                    var hdct = new hoaDonChiTiet()
+                    {
+                        IDHoaDon = hoaDon.IDHoaDon,
+                        IDSanPham = item.ID,
+                        Soluong = item.soLuong,
+                        donGia = item.donGia,
+                        Trangthai = true,
+                    };
+                    _qlhoaDonChiTiet.addHoaDonChiTiet(hdct);
+                }
+                txt_MaHD.Text = hoaDon.IDHoaDon.ToString();
+                _lstViewHoaDonCT = new List<ViewHoaDonCT>();
+                IdSPinGioHang = -1;
+                HoaDon = _qlhoaDon.GetHoaDonFromDB().FirstOrDefault(x => x.IDHoaDon == hoaDon.IDHoaDon);
+                loadGioHang();
+                loadHDcho();
+            }
+            else
+            {
+                MessageBox.Show("Chưa có sản phẩm nào trong hóa đơn!");
             }
         }
     }
