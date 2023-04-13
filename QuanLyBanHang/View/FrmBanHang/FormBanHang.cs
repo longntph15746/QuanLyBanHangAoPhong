@@ -2,6 +2,7 @@
 using _2.BUS.Services;
 using _2_BUS_QUANLY.IServices;
 using _2_BUS_QUANLY.ViewModel;
+using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,8 +29,9 @@ namespace QuanLyBanHang.View.FrmBanHang
         public List<ViewHoaDonCT> _lstViewHoaDonCT;
         public int IdSPinGioHang;
         public hoaDon HoaDon;
-
-
+        public int pID;
+        public khachHang KH;
+        public int oID;
         public FormBanHang()
         {
             InitializeComponent();
@@ -43,6 +45,8 @@ namespace QuanLyBanHang.View.FrmBanHang
             _qlKhachHang = new QLkhachHangServices();
             _qLnhanVien = new QLnhanVienServices();
             _lstViewHoaDonCT = new List<ViewHoaDonCT>();
+            KH = new khachHang();
+            oID = -1;
             LoadSanPham();
             LoadHangSX();
             LoadMauSac();
@@ -520,9 +524,9 @@ namespace QuanLyBanHang.View.FrmBanHang
                 ClearForm();
                 HoaDon = null;
                 MessageBox.Show("Thanh toán thành công!");
+                InHoaDon();
             }
         }
-
         private void btn_thanhtoanngay_Click(object sender, EventArgs e)
         {
             if (cbb_KhachHang.Text == "")
@@ -577,6 +581,128 @@ namespace QuanLyBanHang.View.FrmBanHang
             _lstViewHoaDonCT = new List<ViewHoaDonCT>();
             IdSPinGioHang = -1;
             loadGioHang();
+        }
+        private void InHoaDon()
+        {
+            ppdhd.Document = pdhd;
+            ppdhd.ShowDialog();
+        }
+        private void btn_InHoaDon_Click(object sender, EventArgs e)
+        {
+            string filePath = "";
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Title = "Export Excel";
+            saveFileDialog.Filter = "Excel | *.xlsx | Excel 2003 | *.xls";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                filePath = saveFileDialog.FileName;
+                try
+                {
+                    senderexcel(filePath);
+                    MessageBox.Show("Xuất File Excel Thành công");
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show("Xuất File Excel không  Thành công" + ex.Message);
+                }
+            }
+            //InHoaDon();
+        }
+
+        private void senderexcel(string path)
+        {
+            using (ExcelPackage p = new ExcelPackage())
+            {
+                // đặt tên người tạo file
+                p.Workbook.Properties.Author = "";
+
+                // đặt tiêu đề cho file
+                p.Workbook.Properties.Title = "Báo cáo thống kê";
+
+                //Tạo một sheet để làm việc trên đó
+                p.Workbook.Worksheets.Add("sheet");
+
+                // lấy sheet vừa add ra để thao tác
+                ExcelWorksheet ws = p.Workbook.Worksheets[1];
+
+                // đặt tên cho sheet
+                ws.Name = "sheet";
+                // fontsize mặc định cho cả sheet
+                ws.Cells.Style.Font.Size = 11;
+                // font family mặc định cho cả sheet
+                ws.Cells.Style.Font.Name = "Calibri";
+
+                for (int i = 0; i < dtgv_HoadonCho.Columns.Count; i++)
+                {
+                    ws.Cells[1, i + 1].Value = dtgv_HoadonCho.Columns[i].HeaderText;
+                }
+                for (int i = 0; i < dtgv_HoadonCho.Rows.Count; i++)
+                {
+                    for (int j = 0; j < dtgv_HoadonCho.Columns.Count; j++)
+                    {
+                        ws.Cells[i + 2, j + 1].Value = dtgv_HoadonCho.Rows[i].Cells[j].Value;
+                    }
+                }
+                //Lưu file lại
+                Byte[] bin = p.GetAsByteArray();
+                File.WriteAllBytes(path, bin);
+            };
+        }
+
+        private void pdhd_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            var hd = _qlhoaDon.GetHoaDonFromDB().FirstOrDefault(c => c.IDHoaDon == oID);
+            var kh = _qlKhachHang.GetkhachHangFromDB().FirstOrDefault(c => c.SDT_KH == hd.SDT_KH);
+            var nv = _qLnhanVien.GetNhanVienFromDB().FirstOrDefault(c => c.nhanViens.IDNhanVien == hd.IDNhanVien);
+
+            //lấy chiều rộng của giấy
+            var w = pdhd.DefaultPageSettings.PaperSize.Width;
+            //
+            e.Graphics.DrawString("FPOLY TSHIRT", new System.Drawing.Font("Times New Roman", 15, FontStyle.Bold), Brushes.Black, new System.Drawing.Point(100, 20));
+
+            e.Graphics.DrawString(String.Format("Mã Hóa Đơn : {0}", hd.IDHoaDon), new System.Drawing.Font("Times New Roman", 15, FontStyle.Bold), Brushes.Black, new System.Drawing.Point(w / 2 + 200, 20));
+            e.Graphics.DrawString(String.Format(" {0}", DateTime.Now.ToString()), new System.Drawing.Font("Times New Roman", 15, FontStyle.Bold), Brushes.Black, new System.Drawing.Point(w / 2 + 200, 45));
+
+            //
+            Pen pn = new Pen(Color.Black, 1);
+
+            var y = 70;
+            Point p1 = new Point(10, y);
+            Point p2 = new Point(w - 10, y);
+            e.Graphics.DrawLine(pn, p1, p2);
+            y += 10;
+            e.Graphics.DrawString(String.Format("HÓA ĐƠN BÁN HÀNG"), new System.Drawing.Font("Times New Roman", 15, FontStyle.Bold), Brushes.Black, new System.Drawing.Point(w / 2 - 100, y));
+            y += 20;
+            e.Graphics.DrawString(String.Format("Ngày Mua : {0}", hd.ngayBan), new System.Drawing.Font("Times New Roman", 15, FontStyle.Bold), Brushes.Black, new System.Drawing.Point(w / 2 + 200, y));
+            e.Graphics.DrawString(String.Format("Tên Khách Hàng : {0}", kh.TenKH), new System.Drawing.Font("Times New Roman", 15, FontStyle.Bold), Brushes.Black, new System.Drawing.Point(10, y));
+            e.Graphics.DrawString(String.Format("SDT : {0}", kh.SDT_KH), new System.Drawing.Font("Times New Roman", 15, FontStyle.Bold), Brushes.Black, new System.Drawing.Point(10, y + 30));
+            y += 70;
+            e.Graphics.DrawString(String.Format("STT"), new System.Drawing.Font("Times New Roman", 15, FontStyle.Bold), Brushes.Black, new System.Drawing.Point(10, y));
+            e.Graphics.DrawString(String.Format("Tên Sản Phẩm"), new System.Drawing.Font("Times New Roman", 15, FontStyle.Bold), Brushes.Black, new System.Drawing.Point(100, y));
+            e.Graphics.DrawString(String.Format("Số Lượng"), new System.Drawing.Font("Times New Roman", 15, FontStyle.Bold), Brushes.Black, new System.Drawing.Point(w / 2, y));
+            e.Graphics.DrawString(String.Format("Đơn Giá"), new System.Drawing.Font("Times New Roman", 15, FontStyle.Bold), Brushes.Black, new System.Drawing.Point(w / 2 + 100, y));
+            e.Graphics.DrawString(String.Format("Thành Tiền"), new System.Drawing.Font("Times New Roman", 15, FontStyle.Bold), Brushes.Black, new System.Drawing.Point(w / 2 + 200, y));
+            /////
+            ///
+            int stt = 1;
+            y += 20;
+
+            foreach (var x in _qlhoaDonChiTiet.GetHoaDonChiTietFromDB().Where(c => c.IDHoaDon == oID))
+            {
+                var a = _qlSanPhamCT.GetSanPhamCTTFromDB().FirstOrDefault(p => p.IDSanPhamChiTiet == x.IDSanPham).TenSP;
+                var thanhtien = x.Soluong * x.donGia;
+                e.Graphics.DrawString(String.Format("{0}", stt++), new System.Drawing.Font("Times New Roman", 15, FontStyle.Bold), Brushes.Black, new System.Drawing.Point(10, y));
+                e.Graphics.DrawString(String.Format("{0}", a), new System.Drawing.Font("Times New Roman", 15, FontStyle.Bold), Brushes.Black, new System.Drawing.Point(100, y));
+                e.Graphics.DrawString(String.Format("{0}", x.Soluong), new System.Drawing.Font("Times New Roman", 15, FontStyle.Bold), Brushes.Black, new System.Drawing.Point(w / 2, y));
+                e.Graphics.DrawString(String.Format("{0}", x.donGia), new System.Drawing.Font("Times New Roman", 15, FontStyle.Bold), Brushes.Black, new System.Drawing.Point(w / 2 + 100, y));
+                e.Graphics.DrawString(String.Format("{0}", thanhtien), new System.Drawing.Font("Times New Roman", 15, FontStyle.Bold), Brushes.Black, new System.Drawing.Point(w / 2 + 200, y));
+                y += 20;
+            }
+            y += 20;
+            e.Graphics.DrawLine(pn, p1, p2);
+            y += 20;
+            e.Graphics.DrawString(String.Format("Tổng Tiền : {0}", hd.tongTien), new System.Drawing.Font("Times New Roman", 15, FontStyle.Bold), Brushes.Black, new System.Drawing.Point(w / 2 + 200, y));
         }
     }
 }
