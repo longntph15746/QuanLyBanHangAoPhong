@@ -28,6 +28,7 @@ namespace QuanLyBanHang.View.FrmBanHang
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBanHang));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_TimKiem = new System.Windows.Forms.TextBox();
             this.cbb_hangSX = new System.Windows.Forms.ComboBox();
@@ -39,6 +40,7 @@ namespace QuanLyBanHang.View.FrmBanHang
             this.label1 = new System.Windows.Forms.Label();
             this.dtgv_DSSP = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btn_thanhtoanngay = new System.Windows.Forms.Button();
             this.btn_TaoHD = new System.Windows.Forms.Button();
             this.btn_XoaGH = new System.Windows.Forms.Button();
             this.btn_XoaSP = new System.Windows.Forms.Button();
@@ -70,7 +72,8 @@ namespace QuanLyBanHang.View.FrmBanHang
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.btn_thanhtoanngay = new System.Windows.Forms.Button();
+            this.ppdhd = new System.Windows.Forms.PrintPreviewDialog();
+            this.pdhd = new System.Drawing.Printing.PrintDocument();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_DSSP)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -198,13 +201,23 @@ namespace QuanLyBanHang.View.FrmBanHang
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Giỏ hàng";
             // 
+            // btn_thanhtoanngay
+            // 
+            this.btn_thanhtoanngay.Location = new System.Drawing.Point(388, 255);
+            this.btn_thanhtoanngay.Name = "btn_thanhtoanngay";
+            this.btn_thanhtoanngay.Size = new System.Drawing.Size(144, 34);
+            this.btn_thanhtoanngay.TabIndex = 4;
+            this.btn_thanhtoanngay.Text = "Thanh toán ngay";
+            this.btn_thanhtoanngay.UseVisualStyleBackColor = true;
+            this.btn_thanhtoanngay.Click += new System.EventHandler(this.btn_thanhtoanngay_Click);
+            // 
             // btn_TaoHD
             // 
             this.btn_TaoHD.Location = new System.Drawing.Point(260, 255);
             this.btn_TaoHD.Name = "btn_TaoHD";
             this.btn_TaoHD.Size = new System.Drawing.Size(122, 34);
             this.btn_TaoHD.TabIndex = 3;
-            this.btn_TaoHD.Text = "Tạo hóa đơn";
+            this.btn_TaoHD.Text = "Tạo đơn hàng";
             this.btn_TaoHD.UseVisualStyleBackColor = true;
             this.btn_TaoHD.Click += new System.EventHandler(this.btn_TaoHD_Click_1);
             // 
@@ -363,7 +376,7 @@ namespace QuanLyBanHang.View.FrmBanHang
             this.groupBox4.Size = new System.Drawing.Size(345, 279);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Hóa đơn chờ";
+            this.groupBox4.Text = "Đơn hàng chờ";
             // 
             // dtgv_HoadonCho
             // 
@@ -512,21 +525,25 @@ namespace QuanLyBanHang.View.FrmBanHang
             this.label5.TabIndex = 0;
             this.label5.Text = "Mã hóa đơn :";
             // 
-            // btn_thanhtoanngay
+            // ppdhd
             // 
-            this.btn_thanhtoanngay.Location = new System.Drawing.Point(388, 255);
-            this.btn_thanhtoanngay.Name = "btn_thanhtoanngay";
-            this.btn_thanhtoanngay.Size = new System.Drawing.Size(144, 34);
-            this.btn_thanhtoanngay.TabIndex = 4;
-            this.btn_thanhtoanngay.Text = "Thanh toán ngay";
-            this.btn_thanhtoanngay.UseVisualStyleBackColor = true;
-            this.btn_thanhtoanngay.Click += new System.EventHandler(this.btn_thanhtoanngay_Click);
+            this.ppdhd.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.ppdhd.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.ppdhd.ClientSize = new System.Drawing.Size(400, 300);
+            this.ppdhd.Enabled = true;
+            this.ppdhd.Icon = ((System.Drawing.Icon)(resources.GetObject("ppdhd.Icon")));
+            this.ppdhd.Name = "ppdhd";
+            this.ppdhd.Visible = false;
+            // 
+            // pdhd
+            // 
+            this.pdhd.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.pdhd_PrintPage);
             // 
             // FormBanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1412, 732);
+            this.ClientSize = new System.Drawing.Size(1411, 732);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -596,5 +613,7 @@ namespace QuanLyBanHang.View.FrmBanHang
         private Button btnThanhToan;
         private ComboBox cbb_KhachHang;
         private Button btn_thanhtoanngay;
+        private PrintPreviewDialog ppdhd;
+        private System.Drawing.Printing.PrintDocument pdhd;
     }
 }

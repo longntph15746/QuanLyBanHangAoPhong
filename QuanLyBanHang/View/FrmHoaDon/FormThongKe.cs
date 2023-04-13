@@ -2,6 +2,7 @@
 using _2.BUS.Services;
 using _2_BUS_QUANLY.IServices;
 using _2_BUS_QUANLY.ViewModel;
+using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -121,6 +122,85 @@ namespace QuanLyBanHang.View.FrmHoaDon
             {
                 dtgv_hanghoa.Rows.Clear();
             }
+        }
+
+        private void btn_xuatEx_Click(object sender, EventArgs e)
+        {
+            string filePath = "";
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Title = "Export Excel";
+            saveFileDialog.Filter = "Excel | *.xlsx | Excel 2003 | *.xls";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                filePath = saveFileDialog.FileName;
+                try
+                {
+                    senderexcel(filePath);
+                    MessageBox.Show("Xuất File Excel Thành công");
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show("Xuất File Excel không  Thành công" + ex.Message);
+                }
+            }
+        }
+
+        private void senderexcel(string path)
+        {
+            using (ExcelPackage p = new ExcelPackage())
+            {
+                // đặt tên người tạo file
+                p.Workbook.Properties.Author = "";
+
+                // đặt tiêu đề cho file
+                p.Workbook.Properties.Title = "Báo cáo thống kê";
+
+                //Tạo một sheet để làm việc trên đó
+                p.Workbook.Worksheets.Add("sheet");
+
+                // lấy sheet vừa add ra để thao tác
+                ExcelWorksheet ws = p.Workbook.Worksheets[1];
+
+                // đặt tên cho sheet
+                ws.Name = "sheet";
+                // fontsize mặc định cho cả sheet
+                ws.Cells.Style.Font.Size = 11;
+                // font family mặc định cho cả sheet
+                ws.Cells.Style.Font.Name = "Calibri";
+
+                for (int i = 0; i < dtgv_hanghoa.Columns.Count; i++)
+                {
+                    ws.Cells[1, i + 1].Value = dtgv_hanghoa.Columns[i].HeaderText;
+                }
+                for (int i = 0; i < dtgv_hanghoa.Rows.Count; i++)
+                {
+                    for (int j = 0; j < dtgv_hanghoa.Columns.Count; j++)
+                    {
+                        ws.Cells[i + 2, j + 1].Value = dtgv_hanghoa.Rows[i].Cells[j].Value;
+                    }
+                }
+                //Lưu file lại
+                Byte[] bin = p.GetAsByteArray();
+                File.WriteAllBytes(path, bin);
+
+                //excel.Application application = new excel.Application();
+                //application.Application.Workbooks.Add(Type.Missing);
+                //for (int i = 0; i < dtgv_hanghoa.Columns.Count; i++)
+                //{
+                //    application.Cells[1, i + 1] = dtgv_hanghoa.Columns[i].HeaderText;
+                //}
+                //for (int i = 0; i < dtgv_hanghoa.Rows.Count; i++)
+                //{
+                //    for (int j = 0; j < dtgv_hanghoa.Columns.Count; j++)
+                //    {
+                //        application.Cells[i + 2, j + 1] = dtgv_hanghoa.Rows[i].Cells[j].Value;
+                //    }
+                //}
+                //application.Columns.AutoFit();
+                //application.ActiveWorkbook.SaveCopyAs(path);
+                //application.ActiveWorkbook.Saved = true;
+            };
         }
     }
 }

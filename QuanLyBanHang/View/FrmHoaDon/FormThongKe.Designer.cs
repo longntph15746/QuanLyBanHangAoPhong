@@ -241,6 +241,7 @@
             this.btn_xuatEx.TabIndex = 1;
             this.btn_xuatEx.Text = "Xuất Excel";
             this.btn_xuatEx.UseVisualStyleBackColor = true;
+            this.btn_xuatEx.Click += new System.EventHandler(this.btn_xuatEx_Click);
             // 
             // dtgv_hanghoa
             // 
