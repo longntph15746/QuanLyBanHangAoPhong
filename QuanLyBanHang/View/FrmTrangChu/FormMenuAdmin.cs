@@ -201,5 +201,11 @@ namespace QuanLyBanHang.View.FrmTrangChu
             OpenChildForm(new FormKhachHang(), sender);
             lbl_Home.Text = btn_khachHang.Text;
         }
+
+        private void btn_CV_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormChucVu(), sender);
+            lbl_Home.Text = btn_CV.Text;
+        }
     }
 }

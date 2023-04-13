@@ -19,12 +19,17 @@ namespace QuanLyBanHang.View.FrmNhanVien
         public IQLnhanVienServices qLnhanVienServices;
         public IQLchucVuServices qLchucVuServices;
         public ViewHienThi1 viewNV;
+        public nhanVien _NhanVien;
+        private int _maclick;
+        private List<ViewHienThi1> lstNv;
         public FormNhanVien()
         {
             InitializeComponent();
             qLnhanVienServices = new QLnhanVienServices();
             qLchucVuServices = new QLchucVuServices();
             viewNV = new ViewHienThi1();
+            rdb_HD.Checked = false;
+            lstNv = new List<ViewHienThi1>();
             LoadComboBox();
             LoadData();
         }
@@ -157,6 +162,11 @@ namespace QuanLyBanHang.View.FrmNhanVien
                 radioButton2.Checked = true;
                 rdb_HD.Checked = false;
             }
+        }
+
+        private void dtgv_NhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

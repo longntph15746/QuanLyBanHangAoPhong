@@ -20,7 +20,7 @@ namespace _1_DAL_QUANLY.Extensions
             modelBuilder.Entity<nhanVien>().HasData
                 (
                 new nhanVien() { IDNhanVien = 1, tenNV = "Nguyễn Thành Long", IDChucVu = 1, diaChi = "Hải Dương",SDT = "0902096529", email = "nguyenthanhlong081120022@gmail.com", matKhau = "Long0811", tinhTrang = true  },
-                new nhanVien() { IDNhanVien = 2, tenNV = "LongNT", IDChucVu = 2, diaChi = "Ninh Giang",SDT = "0329746336", email = "nguyenthanhlong081120022@gmail.com", matKhau = "Long08112002", tinhTrang = true  }
+                new nhanVien() { IDNhanVien = 2, tenNV = "LongNT", IDChucVu = 2, diaChi = "Ninh Giang",SDT = "0329746336", email = "long@gmail.com", matKhau = "Long08112002", tinhTrang = true  }
                 );
             modelBuilder.Entity<nhaCungCap>().HasData
                 (

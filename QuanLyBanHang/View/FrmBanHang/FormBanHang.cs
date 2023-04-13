@@ -38,7 +38,7 @@ namespace QuanLyBanHang.View.FrmBanHang
             _qLnhanVien = new QLnhanVienServices();
             _lstViewHoaDonCT = new List<ViewHoaDonCT>();
             KH = new khachHang();
-            oID = 5;
+            oID = -1;
             LoadSanPham();
             LoadHangSX();
             LoadMauSac();
@@ -523,11 +523,9 @@ namespace QuanLyBanHang.View.FrmBanHang
                     sp.soLuong -= item.Soluong;
                     _qlSanPhamCT.UpdateSanPham(sp);
                 }
-
                 // Trừ số điểm tích lũy đã dùng + điểm tích lũy cộng thêm
                 var kh = _qlKhachHang.GetkhachHangFromDB().FirstOrDefault(x => x.SDT_KH == txt_SDT.Text);
                 var diemDaDung = Convert.ToInt32(txt_giamGia.Text);
-
                 var listHDCT = _qlhoaDonChiTiet.GetHoaDonChiTietFromDB().Where(x => x.IDHoaDon == HoaDon.IDHoaDon);
                 int tongTien = 0;
                 foreach (var item in listHDCT)
@@ -535,16 +533,14 @@ namespace QuanLyBanHang.View.FrmBanHang
                     tongTien += Convert.ToInt32(item.donGia) * item.Soluong;
                 }
                 var diemCongThem = tongTien / 10000;
-
                 kh.diemTichluy = kh.diemTichluy - diemDaDung + diemCongThem;
                 _qlKhachHang.UpdateKhachHang(kh);
-
-
                 HoaDon.trangThai = true;
                 HoaDon.ngayBan = DateTime.Now;
                 HoaDon.tongTien = Convert.ToInt32(txt_TongTien.Text);
                 HoaDon.ghiChu = txt_GhiChu.Text;
                 _qlhoaDon.UpdateHoaDon(HoaDon);
+                oID = HoaDon.IDHoaDon;
                 loadHDcho();
                 LoadSanPham();
                 ClearForm();

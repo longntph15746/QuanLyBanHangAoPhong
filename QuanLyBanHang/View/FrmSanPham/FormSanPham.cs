@@ -305,5 +305,35 @@ namespace QuanLyBanHang.View.FrmSanPham
                 }
             }
         }
+
+        private void btn_xuatEX_Click(object sender, EventArgs e)
+        {
+            Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbook workbook = excel.Workbooks.Add(Type.Missing);
+
+            Microsoft.Office.Interop.Excel.Worksheet worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.ActiveSheet;
+            worksheet.Name = "Thong ke";
+
+            for (int i = 0; i < dtgv_SPCT.Columns.Count; i++)
+            {
+                worksheet.Cells[1, i + 1].Value = dtgv_SPCT.Columns[i].HeaderText;
+            }
+            for (int i = 0; i < dtgv_SPCT.Rows.Count; i++)
+            {
+                for (int j = 0; j < dtgv_SPCT.Columns.Count; j++)
+                {
+                    worksheet.Cells[i + 2, j + 1].Value = dtgv_SPCT.Rows[i].Cells[j].Value;
+                }
+            }
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Excel Files|*.xlsx;*.xls;*.csv";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                workbook.SaveAs(saveFileDialog.FileName);
+            }
+
+            excel.Quit();
+        }
     }
 }
